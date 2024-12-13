@@ -13,19 +13,13 @@ export const NavBarMenuItem = ({ label, path }: IRuta) => {
     const pathname = usePathname();
 
   return (
-    <div 
+    <Link href={path} 
         className={
-            ` ${ pathname === path ? 'text-black underline decoration-2 underline-offset-8' : 'text-gray-400'} 
-            hover:underline decoration-2 underline-offset-8 font-semibold `
+            ` ${ pathname === path ? 'text-black border-b-2 decoration-2 underline-offset-8' : 'text-gray-400'} 
+            p-2 hover:border-b-2 decoration-2 border-black font-semibold hover:bg-[#d7f5f4cc] hover:border-gray-400`
         }
     >
-        <li key={path} 
-            className={
-                ` ${ pathname === path ? 'text-black underline decoration-2 underline-offset-8' : 'text-gray-400'} 
-                mx-2  hover:underline decoration-2 underline-offset-8 font-semibold hover:bg-[#d7f5f4cc]`
-            }>
-            <Link href={path} className='capitalize'>{label}</Link>
-        </li>
-    </div>
+            <h1 className='capitalize'>{label}</h1>
+    </Link>
   )
 }
