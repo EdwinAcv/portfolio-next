@@ -31,7 +31,7 @@ export default function RootLayout({
       >
         <NabBar/>
         {/* <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center  p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]"> */}
-        <div className="mt-4 max-w-[1200px]  grid items-center justify-items-center mx-auto">
+        <div className=" max-w-[1200px]  grid items-center justify-items-center mx-auto border-black border-2">
           {children}
         </div>
       </body>
