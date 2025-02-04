@@ -1,4 +1,5 @@
 import { FaCloudArrowDown } from 'react-icons/fa6';
+// import { SiTypescript } from 'react-icons/si';
 import img from '@/img/developer.webp';
 import Image from 'next/image';
 export default function Home() {
@@ -13,6 +14,7 @@ export default function Home() {
         <div className="bg-[#F5F4D7] flex items-center gap-2 rounded-[10px] p-4 hover:cursor-pointer">
           <h3> Descargar CV</h3>
           <FaCloudArrowDown size={'30px'}/>
+          
           
         </div>
       </div>
