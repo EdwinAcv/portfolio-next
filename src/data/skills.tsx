@@ -1,5 +1,6 @@
 import { SkillsData } from "@/utils/interfaces";
-import { SiCss3, SiHtml5, SiJavascript, SiMui, SiNextdotjs, SiQuasar, SiReact, SiRedux, SiSass, SiTailwindcss, SiTypescript, SiVuedotjs } from "react-icons/si";
+import { FaDatabase } from "react-icons/fa6";
+import { SiCanva, SiCss3, SiFigma, SiGit, SiGithub, SiHtml5, SiJavascript, SiJira, SiMui, SiMysql, SiNestjs, SiNextdotjs, SiNodedotjs, SiPostgresql, SiPostman, SiQuasar, SiReact, SiRedux, SiSass, SiSlack, SiTailwindcss, SiTypeorm, SiTypescript, SiVuedotjs } from "react-icons/si";
 
 const size = '35px';
 export const skills: SkillsData = {
@@ -25,26 +26,26 @@ export const skills: SkillsData = {
         ]
     },
     backEnd:[
-        { tittle: "Node.js", icon: "" },
-        { tittle: "Express.js", icon: "" },
-        { tittle: "Nest.js", icon: "" },            
-        { tittle: "Type ORM", icon: "" }            
+        { tittle: "Node.js", icon: <SiNodedotjs size={size} color="#5FA04E"/> },
+        // { tittle: "Express.js", icon: <SiNextdotjs size={size} color="#000000"/> },
+        { tittle: "Nest.js", icon: <SiNestjs size={size} color="#E0234E"/> },            
+        { tittle: "TypeORM", icon: <SiTypeorm size={size} color="#FE0803"/> }            
     ],
     dataBase:[
-        { tittle: "MS SQL Server", icon: "" },
-        { tittle: "MySql", icon: "" },
-        { tittle: "Postgres", icon: "" }
+        { tittle: "SQLServer", icon: <FaDatabase size={size} color="#FE0803"/> },
+        { tittle: "MySQL", icon: <SiMysql size={size} color="#4479A1"/> },
+        { tittle: "Postgressql", icon: <SiPostgresql size={size} color="#4169E1"/> }
     ],
     design:[
-        { tittle: "Figma", icon: "" },
-        { tittle: "canvas", icon:  "" }
+        { tittle: "Figma", icon: <SiFigma size={size} color="#F24E1E"/> },
+        { tittle: "canva", icon:  <SiCanva size={size} color="#00C4CC"/> }
     ],
     others:[
-        { tittle: "Git", icon: "" },
-        { tittle: "Git Hub", icon: "" },
-        { tittle: "Slack", icon: "" },
-        { tittle: "Jira", icon: "" },
-        { tittle: "Postman", icon: "" }
+        { tittle: "Git", icon: <SiGit size={size} color="#F05032"/> },
+        { tittle: "Git Hub", icon: <SiGithub size={size} color="#181717"/> },
+        { tittle: "Slack", icon: <SiSlack size={size} color="#4A154B"/> },
+        { tittle: "Jira", icon: <SiJira size={size} color="#0052CC"/> },
+        { tittle: "Postman", icon: <SiPostman size={size} color="#FF6C37"/> }
         
     ]
 };

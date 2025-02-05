@@ -27,11 +27,11 @@ const rutas = [
 export const NabBar = () => {
   return (
     <div>
-        <nav className='bg-[#F5F4D7] flex p-3 justify-between items-center'>
-            <div>
+        <nav className='bg-[#F5F4D7] sm:flex p-3 justify-between items-center'>
+            <div className='p-2'>
                 <h1>logo</h1>
             </div>
-            <ul className='flex gap-2'>
+            <ul className='sm:flex gap-2'>
                 {rutas.map((ruta) => (
                     <NavBarMenuItem key={ruta.path} {...ruta}/>
                 ))}
