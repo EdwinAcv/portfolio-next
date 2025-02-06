@@ -2,9 +2,6 @@ import { skills } from '../../data/skills';
 import { SiHtml5 } from 'react-icons/si';
 
 
-const elements = [ 
-  { tittle:"", icon: <SiHtml5/> }
-]
 export default function SkillsPage() {
 
   const { frontEnd, backEnd, dataBase, design, others } = skills;

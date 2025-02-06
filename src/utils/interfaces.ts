@@ -19,4 +19,16 @@ interface Skill {
     design: Skill[];
     others: Skill[];
   }
-  
+
+// **************contact**************
+interface ContactItem {
+  label: string;
+  value: string;
+  icon: string;
+}
+
+export interface ContactData {
+  contact: ContactItem[];
+  social: ContactItem[];
+}
+

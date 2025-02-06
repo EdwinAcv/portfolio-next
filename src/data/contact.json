@@ -1,0 +1,12 @@
+{
+
+    "contact" :[
+        {"label": "phone", "value": "(829) 783-0938", "icon": "whatsapp.svg"},
+        {"label": "email", "value": "edwincorreog@gmail.com", "icon": "email.svg"}
+    ],
+    "social" :[
+        {"label": "github", "value": "https://github.com/EdwinAcv", "icon": "github.svg"},
+        {"label": "linkedin", "value": "https://www.linkedin.com/in/edwin-acevedo-gomez-396b82247/", "icon": "linkedin.svg"}
+
+    ]
+}
