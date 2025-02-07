@@ -19,3 +19,46 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+.max-display {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.special-background {
+  background-image: url('/contact/contactBackground.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+/* .special-background { */
+  /* background: var(--background);
+  background-image: url('/contact/contactBackground.svg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  min-height: 100vh; */
+
+  /* background: url('/contact/contactBackground.svg') no-repeat center center;
+  background-size: cover; */
+/* } */
+
+/* .special-background {
+  background: var(--background);
+  background-image: url('/contact/contactBackground.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  background-attachment: fixed;
+} */
+
+.shadow {
+  box-shadow: 0 0 10px rgb(153, 191, 176);
+}
+/* .shadow {
+  box-shadow: 0 0 10px rgb(161, 245, 212);
+} */
+
+/* .shadow {
+  box-shadow: 0 10px 10px -5px rgb(161, 245, 212);
+} */

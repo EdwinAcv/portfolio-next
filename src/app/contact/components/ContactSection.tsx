@@ -1,14 +1,14 @@
 import Image from "next/image";
 import contactJson from "@/data/contact.json";
-import { ContactForm } from "./components/ContactForm";
 import Link from "next/link";
+import { ContactForm } from "./ContactForm";
 
-export default function ContactPage() {
+export const ContactSection = () => {
 
   const {  contact, social } = contactJson;
 
   return (
-    <div className="min-w-full flex flex-col items-center justify-center p-8 ">
+    <div className="max-display flex flex-col items-center justify-center p-8 border-2 ">
       <h1 className="text-textPrimary text-[25px] underline uppercase font-thin">Contactame</h1>
       <div className="mt-2 flex justify-between w-[70%]">
         {/* info */}
@@ -16,7 +16,7 @@ export default function ContactPage() {
           <div className="mb-4">
             <Image className='hover:cursor-pointer' src={'/logov2.svg'} alt='logo' width={150} height={150}/>
           </div>
-          <p className="pb-4 text-textPrimary font-mono">
+          <p className="pb-4 text-textPrimary">
             Si necesitas ayuda con un proyecto, quieres colaborar o simplemente quieres saludar, no dudes en ponerte en contacto conmigo. ¡Estoy aquí para ayudar!
             {/* We'd love to hear what went well or how we can improve the product experience. */}
           </p>

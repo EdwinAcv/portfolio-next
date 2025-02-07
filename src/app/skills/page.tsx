@@ -26,7 +26,7 @@ export default function SkillsPage() {
               <div className={`${tecnologiesStyle} gap-2`}>
                 {  web.map( ( { tittle, icon } ) => {
                   return (
-                    <div className="p-2 bg-slate-300 rounded-md  flex flex-col items-center">
+                    <div key={tittle} className="p-2 bg-slate-300 rounded-md  flex flex-col items-center">
                       
                       {
                         !icon 

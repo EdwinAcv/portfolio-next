@@ -9,8 +9,14 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
+        primary: "#1D4ED8", // Azul para botones, textos principales
+        secondary: "#9333EA", // Morado para detalles secundarios
+        navBar: "#000000", // Morado para detalles secundarios
+        background: "#101110", // color de youtube modo oscuro
         foreground: "var(--foreground)",
+        textPrimary: "#FFFFFF", // Negro para texto principal
+        textSecondary: "#6B7280", // Gris oscuro para texto secundario
+        icon: "#F59E0B", // Amarillo para iconos
       },
     },
   },

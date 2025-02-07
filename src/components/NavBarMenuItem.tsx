@@ -16,12 +16,12 @@ export const NavBarMenuItem = ({ label, path }: IRuta) => {
     <Link href={path}>
       <div
         className={
-          ` ${ pathname === path ? 'text-black border-b-2 ' : 'text-gray-400'} 
-          p-2 hover:border-b-2 decoration-2 border-black font-semibold hover:bg-[#d7f5f4cc] hover:border-gray-400`
+          ` ${ pathname === path ? 'text-textPrimary font-bold border-b-2 ' : 'text-gray-400'} 
+          p-5  hover:border-b-2 decoration-2 border-textPrimary font-mono font-semibold hover:bg-background hover:border-gray-400`
       }
       >
 
-            <h1 className='capitalize'>{label}</h1>
+            <h1 className='uppercase'>{label}</h1>
       </div>
     </Link>
   )

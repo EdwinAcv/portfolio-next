@@ -1,5 +1,6 @@
 import React from 'react'
 import { NavBarMenuItem } from './NavBarMenuItem';
+import Image from 'next/image';
 
 const rutas = [
     {
@@ -27,11 +28,13 @@ const rutas = [
 export const NabBar = () => {
   return (
     <div>
-        <nav className='bg-[#F5F4D7] sm:flex p-3 justify-between items-center'>
+        {/* <nav className='bg-[#F5F4D7] sm:flex p-3 justify-between items-center'> */}
+        <nav className='bg-navBar shadow sm:flex  justify-between items-center'>
             <div className='p-2'>
-                <h1>logo</h1>
+                {/* <h1 className='text-textPrimary'>logo</h1> */}
+                <Image className='hover:cursor-pointer' src={'/logo.svg'} alt='logo' width={40} height={40}/>
             </div>
-            <ul className='sm:flex gap-2'>
+            <ul className='sm:flex gap'>
                 {rutas.map((ruta) => (
                     <NavBarMenuItem key={ruta.path} {...ruta}/>
                 ))}
