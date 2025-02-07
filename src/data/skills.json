@@ -1,0 +1,45 @@
+
+ {
+    "frontEnd":{
+        "web": [
+            { "tittle": "HTML", "icon": "html.svg" },
+            { "tittle": "CSS", "icon": "css.svg" },
+            { "tittle": "Material UI", "icon": "mui.svg" },
+            { "tittle": "Tailwind CSS", "icon": "tailwindcss.svg" },
+            { "tittle": "Quasar", "icon": "quasar.svg" },
+            { "tittle": "SASS CSS", "icon": "sasscss.svg" },
+            { "tittle": "JavaScript", "icon": "javascript.svg" },
+            { "tittle": "TypeScript", "icon": "typescript.svg" },
+            { "tittle": "Next.js", "icon": "nextjs.svg" },
+            { "tittle": "React.js", "icon": "reactjs.svg" },
+            { "tittle": "Vue.js", "icon": "vuejs.svg" },
+            { "tittle": "Redux", "icon": "redux.svg" }
+        ],
+        "mobile":[
+            
+        ]
+    },
+    "backEnd":[
+        { "tittle": "Node.js", "icon": "nodejs.svg" },
+        { "tittle": "Express.js", "icon": "expressjs.svg" },
+        { "tittle": "Nest.js", "icon": "nestjs.svg" },            
+        { "tittle": "TypeORM", "icon": "typeorm.svg" }            
+    ],
+    "dataBase":[
+        { "tittle": "SQLServer", "icon": "sqlserver.svg" },
+        { "tittle": "MySQL", "icon": "mysql.svg" },
+        { "tittle": "Postgressql", "icon": "postgressql.svg" }
+    ],
+    "design":[
+        { "tittle": "Figma", "icon": "figma.svg" },
+        { "tittle": "canva", "icon":  "canva.svg" }
+    ],
+    "others":[
+        { "tittle": "Git", "icon": "git.svg" },
+        { "tittle": "Git Hub", "icon": "github.svg" },
+        { "tittle": "Slack", "icon": "slack.svg" },
+        { "tittle": "Jira", "icon": "jira.svg" },
+        { "tittle": "Postman", "icon": "postman.svg" }
+        
+    ]
+}

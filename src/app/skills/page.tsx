@@ -1,12 +1,11 @@
-import { skills } from '../../data/skills';
-import { SiHtml5 } from 'react-icons/si';
-
+import Image from 'next/image';
+import  skills  from '../../data/skills.json';
 
 export default function SkillsPage() {
 
+
   const { frontEnd, backEnd, dataBase, design, others } = skills;
   const { web } = frontEnd;
-
   const tecnologiesStyle = 'grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 ';
   const mainContainerStyle = 'sm:grid-cols-1  lg:grid-cols-2 ';
 
@@ -32,7 +31,7 @@ export default function SkillsPage() {
                         !icon 
                         ? <div className='size-[30px] bg-amber-400 rounded-lg'>
                         </div>
-                        : icon 
+                        : <Image src={`/skills/${icon}`} alt={icon} width={35} height={35}/> 
                       }
                       <h2 className='mt-2 uppercase font-mono font-semibold'>{ tittle }</h2>
                     </div>
@@ -51,13 +50,13 @@ export default function SkillsPage() {
                 <div className={`${tecnologiesStyle} gap-2`}>
                   {  backEnd.map( ( { tittle, icon } ) => {
                     return (
-                      <div className="p-2 bg-slate-300 rounded-md  flex flex-col items-center">
+                      <div key={icon} className="p-2 bg-slate-300 rounded-md  flex flex-col items-center">
                         
                         {
                           !icon 
                           ? <div className='size-[30px] bg-amber-400 rounded-lg'>
                           </div>
-                          : icon 
+                          : <Image src={`/skills/${icon}`} alt={icon} width={35} height={35}/> 
                         }
                         <h2 className='mt-2 uppercase font-mono font-semibold'>{ tittle }</h2>
                       </div>
@@ -75,13 +74,13 @@ export default function SkillsPage() {
                 <div className={`${tecnologiesStyle} gap-2`}>
                   {  dataBase.map( ( { tittle, icon } ) => {
                     return (
-                      <div className="p-2 bg-slate-300 rounded-md  flex flex-col items-center">
+                      <div key={tittle} className="p-2 bg-slate-300 rounded-md  flex flex-col items-center">
                         
                         {
                           !icon 
                           ? <div className='size-[30px] bg-amber-400 rounded-lg'>
                           </div>
-                          : icon 
+                          : <Image src={`/skills/${icon}`} alt={icon} width={35} height={35}/> 
                         }
                         <h2 className='mt-2 uppercase font-mono font-semibold'>{ tittle }</h2>
                       </div>
@@ -99,13 +98,13 @@ export default function SkillsPage() {
                 <div className={`${tecnologiesStyle} gap-2`}>
                   {  design.map( ( { tittle, icon } ) => {
                     return (
-                      <div className="p-2 bg-slate-300 rounded-md  flex flex-col items-center">
+                      <div key={tittle} className="p-2 bg-slate-300 rounded-md  flex flex-col items-center">
                         
                         {
                           !icon 
                           ? <div className='size-[30px] bg-amber-400 rounded-lg'>
                           </div>
-                          : icon 
+                          : <Image src={`/skills/${icon}`} alt={icon} width={35} height={35}/> 
                         }
                         <h2 className='mt-2 uppercase font-mono font-semibold'>{ tittle }</h2>
                       </div>
@@ -123,13 +122,13 @@ export default function SkillsPage() {
                 <div className={`${tecnologiesStyle} gap-2`}>
                   {  others.map( ( { tittle, icon } ) => {
                     return (
-                      <div className="p-2 bg-slate-300 rounded-md  flex flex-col items-center">
+                      <div key={tittle} className="p-2 bg-slate-300 rounded-md  flex flex-col items-center">
                         
                         {
                           !icon 
                           ? <div className='size-[30px] bg-amber-400 rounded-lg'>
                           </div>
-                          : icon 
+                          : <Image src={`/skills/${icon}`} alt={icon} width={35} height={35}/> 
                         }
                         <h2 className='mt-2 uppercase font-mono font-semibold'>{ tittle }</h2>
                       </div>
