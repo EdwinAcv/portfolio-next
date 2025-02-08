@@ -11,8 +11,10 @@ export default function SkillsPage() {
 
   return (
     <>
-      <h1 className='mt-2 text-[25px] font-semibold leading-5'>Tecnologias</h1>
-      <p className='text-[18px] '>Estas son las tecnologias que manejo actualmente:</p>
+      <div className='my-4 text-center font-mono'>
+        <h1 className='mt-2 text-[25px] font-semibold leading-5 text-textPrimary'>Tecnologias</h1>
+        <p className='text-[18px] text-textPrimary '>Estas son las tecnologias que manejo actualmente:</p>
+      </div>
 
       {/* tecnologies */}
       <div className={`grid ${mainContainerStyle} gap-2`}>
@@ -20,7 +22,7 @@ export default function SkillsPage() {
         <div className=''>
           {
             web.length > 1 && <div className='p-4 mb-4 bg-slate-400 rounded-md'>
-              <h1 className='font-semibold mb-2'>Desarrollo Web</h1>
+              <h1 className='font-semibold mb-2 text-textPrimary font-mono text-[1.2rem]'>Desarrollo Web</h1>
 
               <div className={`${tecnologiesStyle} gap-2`}>
                 {  web.map( ( { tittle, icon } ) => {
@@ -45,7 +47,7 @@ export default function SkillsPage() {
         {/* backEnd */}
         <div className=''>
           {  backEnd.length > 1 && <div className='p-4 mb-4 bg-slate-400 rounded-md'>
-                <h1 className='font-semibold mb-2'>Desarrollo BackEnd y APIs</h1>
+                <h1 className='font-semibold mb-2 text-textPrimary font-mono text-[1.2rem]'>Desarrollo BackEnd y APIs</h1>
 
                 <div className={`${tecnologiesStyle} gap-2`}>
                   {  backEnd.map( ( { tittle, icon } ) => {
@@ -69,7 +71,7 @@ export default function SkillsPage() {
         {/* data base */}
         <div className=''>
           {  dataBase.length > 1 && <div className='p-4 mb-4 bg-slate-400 rounded-md'>
-                <h1 className='font-semibold mb-2'>Bases de Datos</h1>
+                <h1 className='font-semibold mb-2 text-textPrimary font-mono text-[1.2rem]'>Bases de Datos</h1>
 
                 <div className={`${tecnologiesStyle} gap-2`}>
                   {  dataBase.map( ( { tittle, icon } ) => {
@@ -93,7 +95,7 @@ export default function SkillsPage() {
         {/* design */}
         <div className=''>
           {  design.length > 1 && <div className='p-4 mb-4 bg-slate-400 rounded-md'>
-                <h1 className='font-semibold mb-2'>Diseño Web</h1>
+                <h1 className='font-semibold mb-2 text-textPrimary font-mono text-[1.2rem]'>Diseño Web</h1>
 
                 <div className={`${tecnologiesStyle} gap-2`}>
                   {  design.map( ( { tittle, icon } ) => {
@@ -117,7 +119,7 @@ export default function SkillsPage() {
         {/* others */}
         <div className=''>
           {  others.length > 1 && <div className='p-4 mb-4 bg-slate-400 rounded-md'>
-                <h1 className='font-semibold mb-2'>Otros</h1>
+                <h1 className='font-semibold mb-2 text-textPrimary font-mono text-[1.2rem]'>Otros</h1>
 
                 <div className={`${tecnologiesStyle} gap-2`}>
                   {  others.map( ( { tittle, icon } ) => {

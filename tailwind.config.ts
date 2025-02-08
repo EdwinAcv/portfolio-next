@@ -18,6 +18,10 @@ const config: Config = {
         textSecondary: "#6B7280", // Gris oscuro para texto secundario
         icon: "#F59E0B", // Amarillo para iconos
       },
+      fontFamily: {
+        primary: ['var(--font-geist-mono)', 'monospace'],
+        sans: ['var(--font-geist-sans)', 'sans-serif'],
+      },
     },
   },
   plugins: [],

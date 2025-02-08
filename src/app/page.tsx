@@ -1,47 +1,46 @@
 import { FaCloudArrowDown } from 'react-icons/fa6';
-// import { SiTypescript } from 'react-icons/si';
-import img from '@/img/developer.webp';
+import BgBlob from '../../public/aboutme/blob.svg';
 import Image from 'next/image';
 import { ContactSection } from './contact/components/ContactSection';
+import StarBorder from '@/components/StarBorder';
 export default function Home() {
   return (
     <>
       {/* about me */}
-      <div className="max-display min-h-[400px] grid grid-cols-2 items-center mt-10 p-4 ">
+      <div className="max-display min-h-[400px] grid sm:grid-cols-1 md:grid-cols-2 items-center mt-10 p-4 ">
         <div>
-          <h1 className="text-[5rem] leading-[4rem]">Full Stack Developer</h1>
-
+          <h1 className="sm:text-[2.8rem] md:text-[5rem] leading-[4rem] text-textPrimary font-mono">!Hola, Soy Edwin Acevedo</h1>
+          <h3 className='text-textPrimary font-mono sm:text-[0.938rem] md:text-[1.25rem] mt-4 pl-4'>Ingeniero en sistemas y desarrollador de software</h3>
           <br/>
           {/*  Button  */}
           <div className="flex">
-            <div className="bg-[#F5F4D7] flex items-center gap-2 rounded-[10px] p-4 hover:cursor-pointer">
-              <h3> Descargar CV</h3>
-              <FaCloudArrowDown size={'30px'}/>
-              
-              
-            </div>
+            <StarBorder
+              as="button"
+              className="custom-class"
+              color="cyan"
+              speed="5s"
+            >
+              <div className="flex items-center gap-2">
+                <h3> Descargar CV</h3>
+                <FaCloudArrowDown size={'30px'}/>
+              </div>
+            </StarBorder>
+
           </div>
-          {/* <button> Descargar CV </button> */}
         </div>
         
         {/* image or icon */}
-        <div className="h-[100%] bg-fuchsia-100 rounded-md flex relative">
-          {/* big circle */}
-          <div className='bg-slate-500 size-[300px] rounded-full absolute left-[35%] transform -translate-x-[35%] top-[10px]'>
-          </div>
-
-          <div className='bg-slate-400 size-[150px] rounded-full absolute left-[65%] transform -translate-x-[65%] bottom-[10px]'>
-          </div>
-          
-          <div className=' size-[350px] z-[-] rounded-full absolute left-[65%] transform -translate-x-[65%] bottom-[10px]'>
-            <Image src={'/img/developer.webp'} width={100} height={100} alt='imagen'/>
-          </div>
+        <div className="h-[100%] rounded-md flex justify-center relative">
+          <Image className='drop-shadow' src={'/aboutme/blobAndProgrammer.svg'} width={800} height={800} alt='blob'/>
+          {/* <Image className='
+              drop-shadow absolute inset-0 m-auto left-[60%] transform -translate-x-[60%] top-[60%] -translate-y-[60%]' 
+            src={'/aboutme/programmer.png'} width={350} height={350} alt='programmer'/> */}
         </div>
 
         
       </div>
 
-      {/* contact */}
+      {/*****  section contact *****/}
       <div className='special-background min-w-full min-h-[100px]'>
 
         <ContactSection/>
