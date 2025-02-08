@@ -30,11 +30,8 @@ export default function Home() {
         </div>
         
         {/* image or icon */}
-        <div className="h-[100%] rounded-md flex justify-center relative">
-          <Image className='drop-shadow' src={'/aboutme/blobAndProgrammer.svg'} width={800} height={800} alt='blob'/>
-          {/* <Image className='
-              drop-shadow absolute inset-0 m-auto left-[60%] transform -translate-x-[60%] top-[60%] -translate-y-[60%]' 
-            src={'/aboutme/programmer.png'} width={350} height={350} alt='programmer'/> */}
+        <div className="h-[100%] rounded-md flex justify-center">
+          <Image src={'/aboutme/blobAndProgrammer.svg'} width={800} height={800} alt='blob'/>
         </div>
 
         
