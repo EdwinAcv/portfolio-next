@@ -15,7 +15,7 @@ const config: Config = {
         background: "#101110", // color de youtube modo oscuro
         foreground: "var(--foreground)",
         textPrimary: "#FFFFFF", // Negro para texto principal
-        textSecondary: "#6B7280", // Gris oscuro para texto secundario
+        textSecondary: "#D4D4D4", // 
         icon: "#F59E0B", // Amarillo para iconos
       },
       fontFamily: {
