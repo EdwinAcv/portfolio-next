@@ -28,6 +28,18 @@ body {
   filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.2));
 }
 
+.bg-gradient {
+  background: linear-gradient(180deg, 
+    #101110 0%, 
+    #262525 95%, 
+    #DCDCDC 100%);
+}
+
+.bg-gradient2 {
+  background: linear-gradient(to bottom, black, #101110);
+  border: 1px solid #1F2937;
+}
+
 
 .special-background {
   background-image: url('/contact/contactBackground.svg');

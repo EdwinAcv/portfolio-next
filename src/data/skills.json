@@ -36,7 +36,7 @@
     ],
     "others":[
         { "tittle": "Git", "icon": "git.svg" },
-        { "tittle": "Git Hub", "icon": "github.svg" },
+        { "tittle": "GitHub", "icon": "github.svg" },
         { "tittle": "Slack", "icon": "slack.svg" },
         { "tittle": "Jira", "icon": "jira.svg" },
         { "tittle": "Postman", "icon": "postman.svg" }

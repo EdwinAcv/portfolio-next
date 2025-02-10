@@ -3,6 +3,7 @@ import BgBlob from '../../public/aboutme/blob.svg';
 import Image from 'next/image';
 import { ContactSection } from './contact/components/ContactSection';
 import StarBorder from '@/components/StarBorder';
+import { SkillsSection } from '@/components/skills/SkillsSection';
 export default function Home() {
   return (
     <>
@@ -51,6 +52,11 @@ export default function Home() {
         
       </div>
 
+      {/*****  section contact *****/}
+      <div className='special-background min-w-full min-h-[100px]'>
+
+        <SkillsSection/>
+      </div>
       {/*****  section contact *****/}
       <div className='special-background min-w-full min-h-[100px]'>
 

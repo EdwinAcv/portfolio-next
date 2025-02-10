@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import  skills  from '../../data/skills.json';
 
-export default function SkillsPage() {
+export const SkillsSection = ()=> {
 
 
   const { frontEnd, backEnd, dataBase, design, others } = skills;
@@ -10,7 +10,7 @@ export default function SkillsPage() {
   const mainContainerStyle = 'sm:grid-cols-1  lg:grid-cols-2 ';
 
   return (
-    <>
+    <div className='max-display'>
       <div className='my-4 text-center font-mono'>
         <h1 className='mt-2 text-[25px] font-semibold leading-5 text-textPrimary'>Tecnologias</h1>
         <p className='text-[18px] text-textPrimary '>Estas son las tecnologias que manejo actualmente:</p>
@@ -141,6 +141,6 @@ export default function SkillsPage() {
           }
         </div>
       </div>
-    </>
+    </div>
   );
 }
