@@ -12,7 +12,7 @@ export default function SkillsPage() {
   return (
     <>
       <div className='my-4 text-center font-mono'>
-        <h1 className='mt-2 text-[25px] font-semibold leading-5 text-textPrimary'>Tecnologias</h1>
+        <h1 className='mt-2 text-[25px] font-semibold leading-5 text-textPrimary'>Tecnología</h1>
         <p className='text-[18px] text-textPrimary '>Estas son las tecnologias que manejo actualmente:</p>
       </div>
 
