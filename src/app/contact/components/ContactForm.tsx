@@ -1,6 +1,6 @@
  "use client"
 import { useState } from "react";
-import { IoAlertCircle } from "react-icons/io5"
+import { IoAlertCircle, IoCheckmarkCircle } from "react-icons/io5"
  
 
 
@@ -12,15 +12,13 @@ export const ContactForm = () => {
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target;
         setFormData({ ...formData, [name]: value });
-
-        console.log(formData.name);
     };
 
     
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if(!formData.name && !formData.email && !formData.message) {
+    if(!formData.name || !formData.email || !formData.message) {
         setStatus('faltan');
         return;
     }
@@ -35,6 +33,8 @@ export const ContactForm = () => {
         },
         body: JSON.stringify(formData),
       });
+
+      console.log(response)
 
       if (response.ok) {
         setStatus('Mensaje enviado con éxito');
@@ -89,13 +89,23 @@ export const ContactForm = () => {
                 ></textarea>
 
               
-                <button className="w-full rounded-lg bg-gray-900 py-2.5 text-sm text-white transition duration-300 hover:bg-gray-800 font-semibold">Enviar</button>
+                <button 
+                  disabled={ status === 'Enviando...' } 
+                  className="w-full rounded-lg bg-gray-900 py-2.5 text-sm text-white transition duration-300 hover:bg-gray-800 font-semibold"
+                > 
+                  Enviar
+                </button>
                 {
-                    !formData.name && !formData.email && !formData.message && status === 'faltan' &&
-                    <div className={`bg-red-300 rounded-lg p-3 mt-4 flex items-center gap-2`}>
-                        <IoAlertCircle color="#dc2626" size={28}/>
-                        <p className="font-primary text-red-900"> Debe llenar todos los campos </p> 
+                    status === 'faltan' &&
+                    <div className={`bg-green-300 rounded-lg p-3 mt-4 flex items-center gap-2`}>
+                        <IoCheckmarkCircle color="#14532d" size={28}/>
+                        <p className="font-primary text-green-900"> El correo ha sido enviado </p> 
                     </div>
+                    // status === 'faltan' &&
+                    // <div className={`bg-red-300 rounded-lg p-3 mt-4 flex items-center gap-2`}>
+                    //     <IoAlertCircle color="#dc2626" size={28}/>
+                    //     <p className="font-primary text-red-900"> Debe llenar todos los campos </p> 
+                    // </div>
                 }
 
                 <p className="text-textPrimary">{status}</p>
