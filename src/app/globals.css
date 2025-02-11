@@ -39,6 +39,17 @@ body {
   background: linear-gradient(to bottom, black, #101110);
   border: 1px solid #1F2937;
 }
+.bg-contact {
+  background-color: rgba(3, 7, 18, 0.6); /* 0.8 es la opacidad, puedes ajustarla según tus necesidades */
+  
+}
+
+/* .interpolate {
+  height: 365px;
+  overflow: hidden;
+  transition: height .5s;
+  interpolate-size: allow-keywords;
+} */
 
 
 .special-background {

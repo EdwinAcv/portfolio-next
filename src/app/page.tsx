@@ -57,6 +57,12 @@ export default function Home() {
 
         <SkillsSection/>
       </div>
+
+      {/* project */}
+      <div className='bg-background h-[200px]'>
+
+      </div>
+
       {/*****  section contact *****/}
       <div className='special-background min-w-full min-h-[100px]'>
 

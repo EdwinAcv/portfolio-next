@@ -4,20 +4,20 @@ import  skills  from '../../data/skills.json';
 export const SkillsSection = ()=> {
 
 
-  const { frontEnd, backEnd, dataBase, design, others } = skills;
+  const { tittle, subtittle, frontEnd, backEnd, dataBase, design, others } = skills;
   const { web } = frontEnd;
   const tecnologiesStyle = 'grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 ';
   const mainContainerStyle = 'sm:grid-cols-1  lg:grid-cols-2 ';
 
   return (
     <div className='max-display'>
-      <div className='my-4 text-center font-mono'>
-        <h1 className='mt-2 text-[25px] font-semibold leading-5 text-textPrimary'>Tecnologias</h1>
-        <p className='text-[18px] text-textPrimary '>Estas son las tecnologias que manejo actualmente:</p>
+      <div className='m-4 p-4 sm:p-10 text-center font-mono'>
+        <h1 className='sm:mb-2  text-[25px] font-semibold leading-5 text-textPrimary'> { tittle } </h1>
+        <p className='text-[18px] text-textPrimary '>{ subtittle }</p>
       </div>
 
       {/* tecnologies */}
-      <div className={`grid ${mainContainerStyle} gap-2`}>
+      <div className={`mx-4 grid ${mainContainerStyle} gap-2`}>
         {/* frontEnd */}
         <div className=''>
           {

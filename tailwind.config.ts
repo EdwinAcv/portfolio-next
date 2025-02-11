@@ -9,19 +9,26 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        primary: "#1D4ED8", // Azul para botones, textos principales
-        secondary: "#9333EA", // Morado para detalles secundarios
-        navBar: "#000000", // Morado para detalles secundarios
-        background: "#101110", // color de youtube modo oscuro
+        primary: "#1D4ED8",
+        secondary: "#9333EA",
+        navBar: "#000000",
+        background: "#101110",
+        secondaryBackground: "#1F2937",
         foreground: "var(--foreground)",
-        textPrimary: "#FFFFFF", // Negro para texto principal
-        textSecondary: "#D4D4D4", // 
-        icon: "#F59E0B", // Amarillo para iconos
+        textPrimary: "#FFFFFF",
+        textSecondary: "#D4D4D4", 
+        icon: "#F59E0B",
       },
       fontFamily: {
         primary: ['var(--font-geist-mono)', 'monospace'],
         sans: ['var(--font-geist-sans)', 'sans-serif'],
       },
+      fontSize: {
+        sm: ['0.875rem', { lineHeight: '1.25rem' }],
+        md: ['1rem', { lineHeight: '1.5rem' }],
+        lg: ['1.125rem', { lineHeight: '1.75rem' }],
+        xl: ['1.25rem', { lineHeight: '1.75rem' }],
+      }
     },
   },
   plugins: [],
