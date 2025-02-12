@@ -8,11 +8,27 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      animation: {
+        'star-movement-bottom': 'star-movement-bottom linear infinite alternate',
+        'star-movement-top': 'star-movement-top linear infinite alternate',
+      },
+      keyframes: {
+        'star-movement-bottom': {
+          '0%': { transform: 'translate(0%, 0%)', opacity: '1' },
+          '100%': { transform: 'translate(-100%, 0%)', opacity: '0' },
+        },
+        'star-movement-top': {
+          '0%': { transform: 'translate(0%, 0%)', opacity: '1' },
+          '100%': { transform: 'translate(100%, 0%)', opacity: '0' },
+        },
+      },
       colors: {
         primary: "#1D4ED8",
         secondary: "#9333EA",
-        navBar: "#000000",
-        background: "#101110",
+        // navBar: "#000000",
+        navBar: "#18181B",
+        // background: "#101110",
+        background: "#0E0E10",
         secondaryBackground: "#1F2937",
         foreground: "var(--foreground)",
         textPrimary: "#FFFFFF",

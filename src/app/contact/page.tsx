@@ -8,7 +8,7 @@ export default function ContactPage() {
   const { tittle, description, contact, social } = contactJson;
 
   return (
-      <div className="mx-4 border rounded-2xl bg-opacity-2 min-w-full flex flex-col items-center justify-center p-8 bg-black">
+      <div className="mx-4 rounded-2xl bg-opacity-2 min-w-full flex flex-col items-center justify-center p-8 bg-[#0E0E10]">
         <h1 className="text-textPrimary text-[26px] sm:text-[30px] capitalize font-primary py-8"> { tittle } </h1>
         <div className="mt-2 md:flex justify-center sm:justify-between items-start lg:w-[75%]">
 

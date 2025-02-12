@@ -28,10 +28,8 @@ const rutas = [
 export const NabBar = () => {
   return (
     <div>
-        {/* <nav className='bg-[#F5F4D7] sm:flex p-3 justify-between items-center'> */}
-        <nav className='bg-navBar shadow sm:flex  justify-between items-center'>
+        <nav className='bg-navBar sm:flex  justify-between items-center'>
             <div className='p-2'>
-                {/* <h1 className='text-textPrimary'>logo</h1> */}
                 <Image className='hover:cursor-pointer' src={'/logo.svg'} alt='logo' width={40} height={40}/>
             </div>
             <ul className='sm:flex gap'>

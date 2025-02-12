@@ -41,6 +41,7 @@ export default function Home() {
               </div>
             </StarBorder>
 
+
           </div>
         </div>
         
@@ -52,13 +53,13 @@ export default function Home() {
         
       </div>
 
-      {/*****  section contact *****/}
+      {/*****  section skills *****/}
       <div className='special-background min-w-full min-h-[100px]'>
 
         <SkillsSection/>
       </div>
 
-      {/* project */}
+      {/***** section project *****/}
       <div className='bg-background h-[200px]'>
 
       </div>
