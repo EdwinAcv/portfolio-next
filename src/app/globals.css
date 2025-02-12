@@ -43,6 +43,12 @@ body {
   background-color: rgba(3, 7, 18, 0.6); /* 0.8 es la opacidad, puedes ajustarla según tus necesidades */
   
 }
+.bg-folder {
+  background-image: url('/ConstructoraReal.webp');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
 
 /* .interpolate {
   height: 365px;

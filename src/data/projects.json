@@ -1,0 +1,42 @@
+{
+    "tittle": "Projectos",
+    "subtittle": "Estos son los projectos en los que he trabajado",
+    "projects": [
+        {
+            "name": "Loto Real",
+            "description": "Un rediseño del sitio web de la empresa para mejorar la experiencia del usuario, aumentar la interacción con los clientes y permitir solicitudes de empleo.",
+            "image": "",
+            "autoria": "propia",
+            "tecnologies": [
+
+            ]
+        },
+        {
+            "name": "Constructora Real",
+            "description": "Una plataforma para mostrar los proyectos de la empresa e incrementar su presencia en línea y la interacción con los clientes.",
+            "image": "",
+            "autoria": "colavoracion",
+            "tecnologies": [
+
+            ]
+        },
+        {
+            "name": "Project 3",
+            "description": "This is a description of project 3",
+            "image": "",
+            "autoria": "propia",
+            "tecnologies": [
+
+            ]
+        },
+        {
+            "name": "Project 4",
+            "description": "This is a description of project 4",
+            "image": "",
+            "autoria": "colavoracion",
+            "tecnologies": [
+
+            ]
+        }
+    ]
+}
