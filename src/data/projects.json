@@ -8,7 +8,7 @@
             "image": "",
             "autoria": "propia",
             "tecnologies": [
-
+                { "tittle": "Redux", "icon": "redux.svg" }
             ]
         },
         {

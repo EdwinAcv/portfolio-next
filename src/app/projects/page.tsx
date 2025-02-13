@@ -1,7 +1,6 @@
+import { ProjectsModal } from '@/utils/interfaces';
 import procjetsJsons from '../../data/projects.json';
-import { FaExternalLinkAlt } from 'react-icons/fa';
-import { FaRegFolderOpen } from 'react-icons/fa6';
-import { MyButton } from './components/MyButton';
+import { ButtonSection } from './components/ButtonSection';
 
 export default function ProjectsPage() {
   const { tittle, subtittle, projects } = procjetsJsons;
@@ -18,7 +17,7 @@ export default function ProjectsPage() {
 
       <div className='flex flex-col flex-wrap justify-center items-center gap-4'>
         {
-          projects.map( ({ name, description, image, autoria, tecnologies }) => (
+          projects.map( ({ name, description, image, autoria, tecnologies }, index) => (
             // <div key={name} className='bg-cyan-900  flex p-4 gap-4'>
               
             //   <Image src={`/folder.png`} alt={name} width={250} height={250}/>
@@ -38,28 +37,8 @@ export default function ProjectsPage() {
               </div>
 
               {/* buttons projects */}
-              <div className='flex justify-end gap-4 p-4'>
-                <div className='relative group'>
-                  <button className='text-gray-500 hover:text-white flex items-center gap-2'>
-                    <FaExternalLinkAlt size={25} />
-                    {/* <p>Enviar</p> */}
-                  </button>
-                  <span className='absolute bottom-full mb-2 hidden w-max px-2 py-1 text-sm text-white bg-black rounded opacity-0 group-hover:block group-hover:opacity-100'>
-                    Ver sitio
-                  </span>
-                </div>
+              <ButtonSection { ...projects[index] as unknown as ProjectsModal }/>
 
-                
-                
-                <div className='relative group'>
-                  <button className='text-gray-500 hover:text-white'>
-                    <FaRegFolderOpen size={25} />
-                  </button>
-                  <span className='absolute bottom-full mb-2 hidden w-max px-2 py-1 text-sm text-white bg-black rounded opacity-0 group-hover:block group-hover:opacity-100'>
-                    Más detalles
-                  </span>
-                </div>
-              </div>
             </div>
           ) )
         }

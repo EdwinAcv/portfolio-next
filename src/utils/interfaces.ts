@@ -32,3 +32,12 @@ export interface ContactData {
   social: ContactItem[];
 }
 
+// **************projects**************
+export interface ProjectsModal {
+  name: string;
+  description: string;
+  image?: string[];
+  autoria: string;
+  tecnologies?: { tittle: "Redux", icon: "redux.svg" }[];
+}
+
