@@ -94,16 +94,8 @@ export const SkillsSection = ()=> {
           }
         </div>
         {/* design */}
-        <div>
-
-        <StarBorder
-              as="div"
-              className="text-start"
-              color="cyan"
-              speed="5s"
-            >
-              <div className=''>
-          {  design.length > 1 && <div >
+        <div className=''>
+          {  design.length > 1 && <div className='p-4 mb-4 border bg-gradient2 rounded-md'>
                 <h1 className='font-semibold mb-2 text-textPrimary font-mono text-[1.2rem]'>Diseño Web</h1>
 
                 <div className={`${tecnologiesStyle} gap-2`}>
@@ -125,9 +117,6 @@ export const SkillsSection = ()=> {
             </div>
           }
         </div>
-            </StarBorder>
-        </div>
-        
         {/* others */}
         <div className=''>
           {  others.length > 1 && <div className='p-4 mb-4 border bg-gradient2 rounded-md'>

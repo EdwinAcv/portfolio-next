@@ -1,5 +1,7 @@
-import Image from 'next/image';
 import procjetsJsons from '../../data/projects.json';
+import { FaExternalLinkAlt } from 'react-icons/fa';
+import { FaRegFolderOpen } from 'react-icons/fa6';
+import { MyButton } from './components/MyButton';
 
 export default function ProjectsPage() {
   const { tittle, subtittle, projects } = procjetsJsons;
@@ -25,9 +27,9 @@ export default function ProjectsPage() {
             //   </div>
             // </div>
 
-            <div key={name} className='p-4 bg-gray-900 w-[400px]'>
+            <div key={name} className='p-4 bg-gray-900 w-[400px] rounded-lg'>
               <div>
-                <div className='bg-red-400 w-full h-[200px] bg-folder'>a</div>
+                <div className='bg-red-400 w-full h-[200px] bg-folder rounded-lg'></div>
                 <h3 className='font-primary text-textPrimary'> { name } </h3>
               </div>
 
@@ -35,8 +37,28 @@ export default function ProjectsPage() {
                 <p className='font-primary text-textPrimary'> { description } </p>
               </div>
 
-              <div className='text-right p-4'>
-                <button className='text-textPrimary'>Ver mas</button>
+              {/* buttons projects */}
+              <div className='flex justify-end gap-4 p-4'>
+                <div className='relative group'>
+                  <button className='text-gray-500 hover:text-white flex items-center gap-2'>
+                    <FaExternalLinkAlt size={25} />
+                    {/* <p>Enviar</p> */}
+                  </button>
+                  <span className='absolute bottom-full mb-2 hidden w-max px-2 py-1 text-sm text-white bg-black rounded opacity-0 group-hover:block group-hover:opacity-100'>
+                    Ver sitio
+                  </span>
+                </div>
+
+                
+                
+                <div className='relative group'>
+                  <button className='text-gray-500 hover:text-white'>
+                    <FaRegFolderOpen size={25} />
+                  </button>
+                  <span className='absolute bottom-full mb-2 hidden w-max px-2 py-1 text-sm text-white bg-black rounded opacity-0 group-hover:block group-hover:opacity-100'>
+                    Más detalles
+                  </span>
+                </div>
               </div>
             </div>
           ) )

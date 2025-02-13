@@ -27,11 +27,11 @@ export default function Home() {
             </p>
           </div>
 
-          {/*  Button  */}
+          {/*  Button  download cv*/}
           <div className="mt-4">
             <StarBorder
               as="button"
-              className="custom-class"
+              className="rounded-[20px]"
               color="cyan"
               speed="5s"
             >
