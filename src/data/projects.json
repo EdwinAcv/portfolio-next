@@ -5,37 +5,61 @@
         {
             "name": "Loto Real",
             "description": "Un rediseño del sitio web de la empresa para mejorar la experiencia del usuario, aumentar la interacción con los clientes y permitir solicitudes de empleo.",
-            "image": "",
-            "autoria": "propia",
+            "image": [
+                ""
+            ],
+            "autoria": "contribución",
             "tecnologies": [
-                { "tittle": "Redux", "icon": "redux.svg" }
+                { "tittle": "typescript", "icon": "typescript.svg" },
+                { "tittle": "vue.js", "icon": "vuejs.svg" },
+                { "tittle": "jira", "icon": "jira.svg" },
+                { "tittle": "express.js", "icon": "expressjs.svg" },
+                { "tittle": "mysql", "icon": "mysql.svg" },
+                { "tittle": "sass", "icon": "sasscss.svg" },
+                { "tittle": "figma", "icon": "figma.svg" }
             ]
         },
         {
             "name": "Constructora Real",
             "description": "Una plataforma para mostrar los proyectos de la empresa e incrementar su presencia en línea y la interacción con los clientes.",
-            "image": "",
-            "autoria": "colavoracion",
+            "image": [
+                ""
+            ],
+            "autoria": "contribución",
             "tecnologies": [
-
+                { "tittle": "typescript", "icon": "typescript.svg" },
+                { "tittle": "vue.js", "icon": "vuejs.svg" },
+                { "tittle": "jira", "icon": "jira.svg" },
+                { "tittle": "express.js", "icon": "expressjs.svg" },
+                { "tittle": "mysql", "icon": "mysql.svg" },
+                { "tittle": "sass", "icon": "sasscss.svg" },
+                { "tittle": "figma", "icon": "figma.svg" }
             ]
         },
         {
-            "name": "Project 3",
+            "name": "Monitoreo de expedientes",
             "description": "This is a description of project 3",
-            "image": "",
-            "autoria": "propia",
+            "image": [
+                ""
+            ],
+            "autoria": "total autoria",
             "tecnologies": [
-
+                { "tittle": "typescript", "icon": "typescript.svg" },
+                { "tittle": "node.js", "icon": "mysql.svg" },
+                { "tittle": "nest.js", "icon": "nestjs.svg" },
+                { "tittle": "sass", "icon": "sasscss.svg" },
+                { "tittle": "vue.js", "icon": "vuejs.svg" }
             ]
         },
         {
             "name": "Project 4",
             "description": "This is a description of project 4",
-            "image": "",
+            "image": [
+                ""
+            ],
             "autoria": "colavoracion",
             "tecnologies": [
-
+                
             ]
         }
     ]

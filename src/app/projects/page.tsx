@@ -15,18 +15,14 @@ export default function ProjectsPage() {
 
       {/* projects */}
 
-      <div className='flex flex-col flex-wrap justify-center items-center gap-4'>
+      <div className='flex  flex-wrap justify-center items-center gap-4'>
         {
-          projects.map( ({ name, description, image, autoria, tecnologies }, index) => (
-            // <div key={name} className='bg-cyan-900  flex p-4 gap-4'>
-              
-            //   <Image src={`/folder.png`} alt={name} width={250} height={250}/>
-            //   <div className='bg-gray-300 rounded-md w-[250px] h-[32                                                                                                                                                                                                                                                                                                                                                     0px]'>
+          projects.map( ( project ) => {
 
-            //   </div>
-            // </div>
+            const { name, description } = project
 
-            <div key={name} className='p-4 bg-gray-900 w-[400px] rounded-lg'>
+
+            return <div key={name} className='p-4 bg-gray-900 w-[400px] rounded-lg'>
               <div>
                 <div className='bg-red-400 w-full h-[200px] bg-folder rounded-lg'></div>
                 <h3 className='font-primary text-textPrimary'> { name } </h3>
@@ -37,10 +33,10 @@ export default function ProjectsPage() {
               </div>
 
               {/* buttons projects */}
-              <ButtonSection { ...projects[index] as unknown as ProjectsModal }/>
+              <ButtonSection { ...project  as ProjectsModal }/>
 
             </div>
-          ) )
+           })
         }
       </div>
     </div>
