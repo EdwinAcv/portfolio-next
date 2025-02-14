@@ -41,7 +41,6 @@ body {
 }
 .bg-contact {
   background-color: rgba(3, 7, 18, 0.6); /* 0.8 es la opacidad, puedes ajustarla según tus necesidades */
-  
 }
 .bg-folder {
   background-image: url('/ConstructoraReal.webp');
@@ -50,14 +49,6 @@ body {
   background-position: center;
 }
 
-/* .interpolate {
-  height: 365px;
-  overflow: hidden;
-  transition: height .5s;
-  interpolate-size: allow-keywords;
-} */
-
-
 .special-background {
   background-image: url('/contact/contactBackground.svg');
   background-repeat: no-repeat;
@@ -65,34 +56,17 @@ body {
   background-position: center;
 }
 
-/* .special-background { */
-  /* background: var(--background);
-  background-image: url('/contact/contactBackground.svg');
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  min-height: 100vh; */
-
-  /* background: url('/contact/contactBackground.svg') no-repeat center center;
-  background-size: cover; */
-/* } */
-
-/* .special-background {
-  background: var(--background);
-  background-image: url('/contact/contactBackground.svg');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-  background-attachment: fixed;
-} */
-
 .shadow {
   box-shadow: 0 0 10px rgb(153, 191, 176);
 }
-/* .shadow {
-  box-shadow: 0 0 10px rgb(161, 245, 212);
-} */
 
-/* .shadow {
-  box-shadow: 0 10px 10px -5px rgb(161, 245, 212);
-} */
+
+/* Ocultar la barra de desplazamiento pero permitir el desplazamiento */
+.hide-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;  /* Chrome, Safari, and Opera */
+}

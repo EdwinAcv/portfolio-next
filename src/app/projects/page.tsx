@@ -1,4 +1,4 @@
-import { ProjectsModal } from '@/utils/interfaces';
+import { IProjects } from '@/utils/interfaces';
 import procjetsJsons from '../../data/projects.json';
 import { ButtonSection } from './components/ButtonSection';
 
@@ -15,14 +15,14 @@ export default function ProjectsPage() {
 
       {/* projects */}
 
-      <div className='flex  flex-wrap justify-center items-center gap-4'>
+      <div className='flex flex-wrap justify-center items-center gap-8'>
         {
           projects.map( ( project ) => {
 
             const { name, description } = project
 
 
-            return <div key={name} className='p-4 bg-gray-900 w-[400px] rounded-lg'>
+            return <div key={name} className='p-4 bg-gray-900 w-[400px] min-h-[100%] rounded-lg'>
               <div>
                 <div className='bg-red-400 w-full h-[200px] bg-folder rounded-lg'></div>
                 <h3 className='font-primary text-textPrimary'> { name } </h3>
@@ -33,7 +33,7 @@ export default function ProjectsPage() {
               </div>
 
               {/* buttons projects */}
-              <ButtonSection { ...project  as ProjectsModal }/>
+              <ButtonSection { ...project  as IProjects }/>
 
             </div>
            })

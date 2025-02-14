@@ -33,7 +33,7 @@ export interface ContactData {
 }
 
 // **************projects**************
-export interface ProjectsModal {
+export interface IProjects {
   name: string;
   description: string;
   image?: string[];

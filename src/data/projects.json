@@ -45,7 +45,7 @@
             "autoria": "total autoria",
             "tecnologies": [
                 { "tittle": "typescript", "icon": "typescript.svg" },
-                { "tittle": "node.js", "icon": "mysql.svg" },
+                { "tittle": "node.js", "icon": "nodejs.svg" },
                 { "tittle": "nest.js", "icon": "nestjs.svg" },
                 { "tittle": "sass", "icon": "sasscss.svg" },
                 { "tittle": "vue.js", "icon": "vuejs.svg" }

@@ -1,14 +1,15 @@
 "use client"
 import { FaExternalLinkAlt } from "react-icons/fa"
 import { FaRegFolderOpen } from 'react-icons/fa6';
-
 import { MyButton } from "./MyButton"
-import { GenericModal } from "@/components/GenericModal";
-import { ProjectsModal } from "@/utils/interfaces";
-import { useState } from "react";
+import { IProjects } from "@/utils/interfaces";
+import { useState} from "react";
+import { ProjectsModal } from "./ProjectsModal";
 
-export const ButtonSection = ( data: ProjectsModal ) => {
+
+export const ButtonSection = ( data: IProjects ) => {
   const [ isOpen, setIsOpen ] = useState(false);
+
 
   const allProps = { isOpen, setIsOpen, data };
 
@@ -19,7 +20,6 @@ export const ButtonSection = ( data: ProjectsModal ) => {
 
   return (
     <div className='flex justify-end gap-4 '>
-
         <MyButton 
           icon={ <FaRegFolderOpen size={30} /> }
           tooltipName='Más detalles'
@@ -31,9 +31,7 @@ export const ButtonSection = ( data: ProjectsModal ) => {
             action={ () => console.log('click') }
         />
         
-      <div>
-        <GenericModal  {...allProps} />
-      </div>
+        <ProjectsModal { ...allProps } />
     </div>
   )
 }
