@@ -1,9 +1,10 @@
 import { useState } from 'react'
-import { Dialog, DialogBackdrop, DialogPanel, DialogTitle } from '@headlessui/react'
-import { ExclamationTriangleIcon } from '@heroicons/react/24/outline'
+import { Dialog, DialogBackdrop, DialogPanel } from '@headlessui/react'
 import { Carousel } from './Carousel';
 import { IProjects } from '@/utils/interfaces';
 import Image from 'next/image';
+import { MyButton } from './MyButton';
+import { TiDeleteOutline } from 'react-icons/ti';
 
 interface IProjectsModal {
   isOpen: boolean;
@@ -13,7 +14,7 @@ interface IProjectsModal {
 
   
   export const ProjectsModal = ( { isOpen, setIsOpen, data }:IProjectsModal ) => {
-    const tecnologiesStyle = 'grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 ';
+    const tecnologiesStyle = 'flex flex-wrap justify-between';
 
     const { name, description, autoria, tecnologies } = data;
     return (
@@ -30,7 +31,10 @@ interface IProjectsModal {
               className="relative transform overflow-y-auto hide-scrollbar  min-w-[50vw]  max-w-[90vw] max-h-[90vh] rounded-lg bg-gray-900 text-left shadow-xl transition-all data-closed:translate-y-4 data-closed:opacity-0 data-enter:duration-300 data-enter:ease-out data-leave:duration-200 data-leave:ease-in sm:my-8 sm:w-full sm:max-w-lg data-closed:sm:translate-y-0 data-closed:sm:scale-95"
             >
              
-              <div className='m-8 '>
+              <div className='m-8 relative'>
+                <div className='bg-gray-800 absolute top-[-32px] right-[-32px]  '>
+                  <MyButton icon={ <TiDeleteOutline size={40}/> } action={()=>{ setIsOpen(false) }}/>
+                </div>
 
                 <Carousel />
                 <h2 className=" font-bold text-textPrimary font-primary text-[24px]"> { name } </h2>
@@ -46,15 +50,15 @@ interface IProjectsModal {
                       <div className={`${tecnologiesStyle} gap-2`}>
                         {  tecnologies?.map( ( { tittle, icon } ) => {
                           return (
-                            <div key={tittle} className="p-2 rounded-mdnt flex flex-col items-center">
+                            <div key={tittle} className="p-2 rounded-mdnt flex flex-col justify-between items-center min-h-[80px]">
                               
                               {
                                 !icon 
                                 ? <div className='size-[30px] bg-amber-400 rounded-lg'>
                                 </div>
-                                : <Image className='' src={`/skills/${icon}`} alt={icon} width={35} height={35}/> 
+                                : <Image className='' src={`/skills/${icon}`} alt={icon} width={30} height={30}/> 
                               }
-                              <h2 className='mt-2 uppercase font-mono font-semibold text-textPrimary'>{ tittle }</h2>
+                              <h2 className='mt-2 uppercase font-mono font-semibold text-textPrimary text-[14px]'>{ tittle }</h2>
                             </div>
                           )
                         } ) }
