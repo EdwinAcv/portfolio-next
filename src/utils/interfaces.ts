@@ -36,7 +36,7 @@ export interface ContactData {
 export interface IProjects {
   name: string;
   description: string;
-  image?: string[];
+  images: string[];
   autoria: string;
   tecnologies?: { tittle: "Redux", icon: "redux.svg" }[];
 }

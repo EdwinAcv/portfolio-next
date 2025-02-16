@@ -4,15 +4,12 @@ import Image from 'next/image'
 import React from 'react'
 import { useState } from "react";
 
-const images = [
-  "/ConstructoraReal.webp",
-  "/docs/images/carousel/carousel-2.svg",
-  "/docs/images/carousel/carousel-3.svg",
-  "/docs/images/carousel/carousel-4.svg",
-  "/docs/images/carousel/carousel-5.svg",
-];
+interface IImages {
+  images: string[];
+}
 
-export const Carousel = () => {
+
+export const Carousel = ({images}:IImages) => {
     const [activeIndex, setActiveIndex] = useState(0);
 
     const prevSlide = () => {
@@ -37,7 +34,7 @@ export const Carousel = () => {
               <Image
                 width={600}
                 height={300}
-                src={src}
+                src={`/${src}`}
                 className="w-full h-full object-contain"
                 alt={`Slide ${index + 1}`}
               />

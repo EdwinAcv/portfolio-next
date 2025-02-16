@@ -5,8 +5,8 @@
         {
             "name": "Loto Real",
             "description": "Un rediseño del sitio web de la empresa para mejorar la experiencia del usuario, aumentar la interacción con los clientes y permitir solicitudes de empleo.",
-            "image": [
-                ""
+            "images": [
+                "LotoReal.webp"
             ],
             "autoria": "contribución",
             "tecnologies": [
@@ -22,8 +22,8 @@
         {
             "name": "Constructora Real",
             "description": "Una plataforma para mostrar los proyectos de la empresa e incrementar su presencia en línea y la interacción con los clientes.",
-            "image": [
-                ""
+            "images": [
+                "ConstructoraReal.webp"
             ],
             "autoria": "contribución",
             "tecnologies": [
@@ -38,9 +38,12 @@
         },
         {
             "name": "Monitoreo de expedientes",
-            "description": "This is a description of project 3",
-            "image": [
-                ""
+            "description": "Portal para consultar informacion en un API sobre expedientes que constantemente van cambiando, cada vez que cambien se debe enviar un correro informado que expediente y que informacion cambio.",
+            "images": [
+                "seguimientoExpedientes.png",
+                "seguimiento1.png",
+                "seguimiento2.png",
+                "seguimiento3.png"
             ],
             "autoria": "total autoria",
             "tecnologies": [
@@ -54,8 +57,8 @@
         {
             "name": "Project 4",
             "description": "This is a description of project 4",
-            "image": [
-                ""
+            "images": [
+                "LotoReal.webp"
             ],
             "autoria": "colavoracion",
             "tecnologies": [

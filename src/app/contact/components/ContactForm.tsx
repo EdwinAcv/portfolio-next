@@ -96,16 +96,16 @@ export const ContactForm = () => {
                   Enviar
                 </button>
                 {
-                    status === 'faltan' &&
-                    <div className={`bg-green-300 rounded-lg p-3 mt-4 flex items-center gap-2`}>
-                        <IoCheckmarkCircle color="#14532d" size={28}/>
-                        <p className="font-primary text-green-900"> El correo ha sido enviado </p> 
-                    </div>
                     // status === 'faltan' &&
-                    // <div className={`bg-red-300 rounded-lg p-3 mt-4 flex items-center gap-2`}>
-                    //     <IoAlertCircle color="#dc2626" size={28}/>
-                    //     <p className="font-primary text-red-900"> Debe llenar todos los campos </p> 
+                    // <div className={`bg-green-300 rounded-lg p-3 mt-4 flex items-center gap-2`}>
+                    //     <IoCheckmarkCircle color="#14532d" size={28}/>
+                    //     <p className="font-primary text-green-900"> El correo ha sido enviado </p> 
                     // </div>
+                    status === 'faltan' &&
+                    <div className={`bg-red-300 rounded-lg p-3 mt-4 flex items-center gap-2`}>
+                        <IoAlertCircle color="#dc2626" size={28}/>
+                        <p className="font-primary text-red-900"> Debe llenar todos los campos </p> 
+                    </div>
                 }
 
                 <p className="text-textPrimary">{status}</p>

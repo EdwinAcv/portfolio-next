@@ -15,7 +15,6 @@ export const ButtonSection = ( data: IProjects ) => {
 
   const openModal = () => {
     setIsOpen(true);
-    console.log(isOpen)
   }
 
   return (

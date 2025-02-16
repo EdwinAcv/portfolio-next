@@ -4,15 +4,15 @@ import Image from 'next/image';
 
 const rutas = [
     {
-        label: 'Inicio',
+        label: 'sobre mi',
         path: '/',
     },
+    // {
+    //     label: 'acerca de',
+    //     path: '/aboutme',
+    // },
     {
-        label: 'acerca de',
-        path: '/aboutme',
-    },
-    {
-        label: 'Habilidades',
+        label: 'tecnologias',
         path: '/skills',
     },
     {
@@ -30,7 +30,7 @@ export const NabBar = () => {
     <div>
         <nav className='bg-navBar sm:flex  justify-between items-center'>
             <div className='p-2'>
-                <Image className='hover:cursor-pointer' src={'/logo.svg'} alt='logo' width={40} height={40}/>
+                <Image className='hover:cursor-pointer size-[40px]' src={'/logo.svg'} alt='logo' width={0} height={0}/>
             </div>
             <ul className='sm:flex gap'>
                 {rutas.map((ruta) => (
