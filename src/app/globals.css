@@ -42,22 +42,30 @@ body {
 .bg-contact {
   background-color: rgba(3, 7, 18, 0.6); /* 0.8 es la opacidad, puedes ajustarla según tus necesidades */
 }
-.bg-folder {
+.bg-poject-preview {
   background-image: url('/ConstructoraReal.webp');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
+.bg-folder {
+  background-image: url('/darkFolder.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center;
+
+}
 
 .special-background {
-  background-image: url('/contact/contactBackground.svg');
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-image: url('/contact/bg-circle-contacts.svg');
+  background-color: #000000;
+  /* background-repeat: no-repeat; */
+  /* background-size: cover; */
   background-position: center;
 }
 
 .shadow {
-  box-shadow: 0 0 10px rgb(153, 191, 176);
+  box-shadow: 0 0 10px #4B5563 ;
 }
 
 
@@ -69,4 +77,10 @@ body {
 
 .hide-scrollbar::-webkit-scrollbar {
   display: none;  /* Chrome, Safari, and Opera */
+}
+
+.truncate-description {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }

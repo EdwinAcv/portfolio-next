@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { ContactSection } from './contact/components/ContactSection';
 import StarBorder from '@/components/StarBorder';
 import { SkillsSection } from '@/components/skills/SkillsSection';
+import { ProjectsSection } from '@/components/projects/ProjectsSection';
 export default function Home() {
   return (
     <>
@@ -54,18 +55,18 @@ export default function Home() {
       </div>
 
       {/*****  section skills *****/}
-      <div className='special-background min-w-full min-h-[100px]'>
+      <div className='bg-black min-w-full min-h-[100px]'>
 
         <SkillsSection/>
       </div>
 
-      {/***** section project *****/}
-      <div className='bg-background h-[200px]'>
-
+      {/***** section projects *****/}
+      <div className='bg-background'>
+        <ProjectsSection/>
       </div>
 
       {/*****  section contact *****/}
-      <div className='special-background min-w-full min-h-[100px]'>
+      <div className='special-background min-w-full  '>
 
         <ContactSection/>
       </div>

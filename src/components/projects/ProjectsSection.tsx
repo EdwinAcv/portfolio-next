@@ -1,16 +1,12 @@
 import { IProjects } from '@/utils/interfaces';
 import procjetsJsons from '../../data/projects.json';
-import { ButtonSection } from './components/ButtonSection';
+import { ButtonSection } from '@/app/projects/components/ButtonSection';
 
-export default function ProjectsPage() {
+export const  ProjectsSection = () => {
   const { tittle, subtittle, projects } = procjetsJsons;
 
-  const limitDescription = (description: string) => {
-    return description.length > 155 ? `${description.slice(0, 155)}...` : description;
-  };
-
   return (
-    <div className="max-display border p-8">
+    <div className="max-display p-8">
       {/* header */}
       <div className='my-8 text-center'>
         <h1 className='font-primary text-textPrimary text-[30px]'>{tittle}</h1>
@@ -32,7 +28,7 @@ export default function ProjectsPage() {
                 <h3 className='font-primary font-bold text-textPrimary py-2'>{name}</h3>
                 <div className='min-h-[150px] overflow-hidden '>
 
-                  <p className='font-primary text-textPrimary '>{limitDescription(description)}</p>
+                  <p className='font-primary text-textPrimary '>{description}</p>
                 </div>
                 {/* buttons projects */}
                 <ButtonSection {...project as IProjects} />

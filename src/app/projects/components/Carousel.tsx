@@ -24,7 +24,7 @@ export const Carousel = () => {
     };
   
     return (
-      <div className="relative w-full">
+      <div className="relative w-full px-4">
         {/* Carousel wrapper */}
         <div className="relative h-56 md:h-96 overflow-hidden rounded-lg">
           {images.map((src, index) => (
