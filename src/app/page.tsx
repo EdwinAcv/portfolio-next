@@ -6,26 +6,26 @@ export default function Home() {
   return (
     <>
       {/* about me */}
-      <div>
+      <section id='aboutme'>
         <AboutMeSection/>
-      </div>
+      </section>
 
       {/*****  section skills *****/}
-      <div className='bg-black min-w-full min-h-[100px]'>
+      <section id='skills' className='bg-black min-w-full min-h-[100px]'>
 
         <SkillsSection/>
-      </div>
+      </section>
 
       {/***** section projects *****/}
-      <div className='bg-background'>
+      <section id='projects' className='bg-background'>
         <ProjectsSection/>
-      </div>
+      </section>
 
       {/*****  section contact *****/}
-      <div className='special-background min-w-full  '>
+      <section id='contact' className='special-background min-w-full  '>
 
         <ContactSection/>
-      </div>
+      </section>
     </>
   );
 }

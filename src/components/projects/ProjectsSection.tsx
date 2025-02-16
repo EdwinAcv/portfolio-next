@@ -19,7 +19,6 @@ export const ProjectsSection = () => {
       <div className='flex flex-wrap justify-center sm:justify-around lg:justify-between items-center gap-8'>
         {projects.map((project, index) => {
           const { name, description, images } = project;
-          console.log(images[0]);
           return (
             <AnimatedContent
               key={name}

@@ -11,13 +11,12 @@ interface IRuta {
 
 export const NavBarMenuItem = ({ label, path }: IRuta) => {
     const pathname = usePathname();
-
   return (
     <Link href={path}>
       <div
         className={
-          ` ${ pathname === path ? 'text-textPrimary font-bold border-b-2 ' : 'text-gray-400'} 
-          p-5  hover:border-b-2 decoration-2 border-textPrimary font-mono font-semibold hover:bg-background hover:border-gray-400`
+          ` ${ pathname === `${path}` ? 'text-textPrimary font-bold border-b-2 ' : 'text-gray-400'} 
+          p-5  hover:border-b-2 decoration-2 border-textPrimary font-mono font-semibold hover:bg-background hover:border-gray-400 transition duration-300`
       }
       >
 

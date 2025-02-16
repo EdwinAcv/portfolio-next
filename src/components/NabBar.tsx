@@ -5,7 +5,7 @@ import Image from 'next/image';
 const rutas = [
     {
         label: 'sobre mi',
-        path: '/',
+        path: '#aboutme',
     },
     // {
     //     label: 'acerca de',
@@ -13,28 +13,33 @@ const rutas = [
     // },
     {
         label: 'tecnologias',
-        path: '/skills',
+        path: '#skills',
     },
     {
         label: 'projectos',
-        path: '/projects',
+        path: '#projects',
     },
     {
         label: 'contactame',
-        path: '/contact',
+        path: '#contact',
     },
 ]
 
 export const NabBar = () => {
   return (
     <div>
-        <nav className='bg-navBar sm:flex  justify-between items-center'>
+        {/* <nav className="fixed top-0 left-0 w-full bg-white shadow-md p-4 flex justify-center space-x-6">
+              <a href="#aboutme" className="text-blue-600 hover:underline">Inicio</a>
+              <a href="#skills" className="text-blue-600 hover:underline">Servicios</a>
+              <a href="#projects" className="text-blue-600 hover:underline">Contacto</a>
+            </nav> */}
+        <nav className='bg-navBar sm:fixed top-0 left-0 w-full z-[15] sm:flex  justify-between items-center'>
             <div className='p-2'>
                 <Image className='hover:cursor-pointer size-[40px]' src={'/logo.svg'} alt='logo' width={0} height={0}/>
             </div>
             <ul className='sm:flex gap'>
                 {rutas.map((ruta) => (
-                    <NavBarMenuItem key={ruta.path} {...ruta}/>
+                     <NavBarMenuItem key={ruta.path} {...ruta}/>
                 ))}
             </ul>
         </nav>
