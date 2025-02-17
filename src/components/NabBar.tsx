@@ -5,7 +5,7 @@ import Image from 'next/image';
 const rutas = [
     {
         label: 'sobre mi',
-        path: '#aboutme',
+        path: 'aboutme',
     },
     // {
     //     label: 'acerca de',
@@ -13,19 +13,20 @@ const rutas = [
     // },
     {
         label: 'tecnologias',
-        path: '#skills',
+        path: 'skills',
     },
     {
         label: 'projectos',
-        path: '#projects',
+        path: 'projects',
     },
     {
         label: 'contactame',
-        path: '#contact',
+        path: 'contact',
     },
 ]
 
 export const NabBar = () => {
+
   return (
     <div>
         {/* <nav className="fixed top-0 left-0 w-full bg-white shadow-md p-4 flex justify-center space-x-6">
