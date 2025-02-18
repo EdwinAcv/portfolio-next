@@ -33,11 +33,19 @@ export interface ContactData {
 }
 
 // **************projects**************
+interface Button {
+  icon: string;
+  tooltipName: string;
+  disabled: boolean;
+  typeAction: string;
+  url?: string; // Optional property since not all buttons have a URL
+}
 export interface IProjects {
   name: string;
   description: string;
   images: string[];
   autoria: string;
   tecnologies?: { tittle: "Redux", icon: "redux.svg" }[];
+  buttons: Button[];
 }
 

@@ -8,9 +8,9 @@ export const ContactSection = () => {
   const { tittle, description, contact, social } = contactJson;
 
   return (
-      <div className="rounded-2xl bg-opacity-2 min-w-full flex flex-col items-center justify-center p-8">
-        <h1 className="text-textPrimary text-[26px] sm:text-[30px] capitalize font-primary py-8"> { tittle } </h1>
-        <div className="max-display rounded-3xl mt-2 md:flex justify-center sm:justify-between items-start lg:w-[65%]">
+      <div className="rounded-2xl bg-opacity-2 min-w-full flex flex-col items-center justify-center ">
+        <h1 className="text-textPrimary text-[26px] sm:text-[30px] capitalize font-primary py-8 font-bold"> { tittle } </h1>
+        <div className="max-display rounded-3xl mt-2 md:flex justify-center sm:justify-between items-start lg:w-full p-8">
 
           {/* form */}
           <div className="max-w-[400px] m-2">

@@ -9,7 +9,10 @@ interface MyButton {
 export const MyButton = ( { name,icon, className, tooltipName, action }:MyButton ) => {
   return (
     <div className={`relative group ${className}`}>
-        <button onClick={ action } className='text-gray-500 hover:text-white flex items-center transition-colors duration-300'>
+        <button 
+          onClick={ action } 
+          className='text-gray-500 hover:text-white flex items-center transition-colors duration-300'
+        >
             { icon }
             { name && <p> name </p> }
         </button>

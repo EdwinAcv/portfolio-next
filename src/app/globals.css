@@ -39,6 +39,10 @@ body {
   background: linear-gradient(to bottom, black, #101110);
   border: 1px solid #1F2937;
 }
+.bg-gradient3 {
+  background: linear-gradient(to bottom, #111827 , #1c2841 );
+  border: 1px solid #475b77;
+}
 .bg-contact {
   background-color: rgba(3, 7, 18, 0.6); /* 0.8 es la opacidad, puedes ajustarla según tus necesidades */
 }

@@ -17,6 +17,10 @@
                 { "tittle": "mysql", "icon": "mysql.svg" },
                 { "tittle": "sass", "icon": "sasscss.svg" },
                 { "tittle": "figma", "icon": "figma.svg" }
+            ],
+            "buttons": [
+                { "icon": "folder", "tooltipName": "Más detalles", "disabled": false, "typeAction": "void" },
+                { "icon": "link", "tooltipName": "Ver sitio", "disabled": false, "typeAction": "link", "url": "https://lotoreal.com" }
             ]
         },
         {
@@ -34,6 +38,10 @@
                 { "tittle": "mysql", "icon": "mysql.svg" },
                 { "tittle": "sass", "icon": "sasscss.svg" },
                 { "tittle": "figma", "icon": "figma.svg" }
+            ],
+            "buttons": [
+                { "icon": "folder", "tooltipName": "Más detalles", "disabled": false, "typeAction": "void" },
+                { "icon": "link", "tooltipName": "Ver sitio", "disabled": false, "typeAction": "link", "url": "https://constructorareal.com.do/" }
             ]
         },
         {
@@ -52,6 +60,10 @@
                 { "tittle": "nest.js", "icon": "nestjs.svg" },
                 { "tittle": "sass", "icon": "sasscss.svg" },
                 { "tittle": "vue.js", "icon": "vuejs.svg" }
+            ],
+            "buttons": [
+                { "icon": "folder", "tooltipName": "Más detalles", "disabled": false, "typeAction": "void" },
+                { "icon": "link", "tooltipName": "Ver sitio", "disabled": true, "typeAction": "link", "url": "" }
             ]
         },
         {
@@ -63,6 +75,10 @@
             "autoria": "colavoracion",
             "tecnologies": [
                 
+            ],
+            "buttons": [
+                { "icon": "folder", "tooltipName": "Más detalles", "disabled": true, "typeAction": "void" },
+                { "icon": "link", "tooltipName": "Ver sitio", "disabled": true, "typeAction": "link", "url": "" }
             ]
         }
     ]

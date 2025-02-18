@@ -52,7 +52,7 @@ interface IProjectsModal {
                       <div>
                         {/* <h3>Tecnologias utilizadas</h3> */}
                         {
-                          tecnologies && tecnologies.length > 1 && <div className='p-4 mb-4 mt-2 border bg-gradient2 rounded-md'>
+                          tecnologies && tecnologies.length > 1 && <div className='p-4 mb-4 mt-2 border bg-gradient3 rounded-md'>
                             <h1 className='font-semibold mb-2 text-textPrimary font-mono text-[1.2rem]'>Tecnologias utilizadas</h1>
               
                             <div className={`${tecnologiesStyle} gap-2`}>
