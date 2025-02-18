@@ -16,7 +16,7 @@ export const AboutMeSection = () => {
     const { tittle, subTittle } = Data;
   return (
     <div className="max-display min-h-[400px] grid md:grid-cols-2 items-center mt-10 p-4 ">
-        <div>
+        <div className="mt-[72px]">
           {/* <h1 className="text-[2.7rem] md:text-[2.8rem] lg:text-[3.5rem] xl:text-[4.5rem] leading-[2.8rem] lg:leading-[4rem] text-textPrimary font-mono"> { tittle } </h1> */}
           <SplitText
             text={tittle}
