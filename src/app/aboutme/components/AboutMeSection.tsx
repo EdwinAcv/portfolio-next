@@ -15,7 +15,7 @@ export const AboutMeSection = () => {
     const easeOutCubic: EasingFunction = (t) => (--t) * t * t + 1;
     const { tittle, subTittle } = Data;
   return (
-    <div className="max-display min-h-[400px] grid md:grid-cols-2 items-center mt-10 p-4 ">
+    <div className="max-display min-h-[400px] grid md:grid-cols-2 items-center mt-10 px-4 py-[50px] md:py-[120px] ">
         <div className="mt-[72px]">
           {/* <h1 className="text-[2.7rem] md:text-[2.8rem] lg:text-[3.5rem] xl:text-[4.5rem] leading-[2.8rem] lg:leading-[4rem] text-textPrimary font-mono"> { tittle } </h1> */}
           <SplitText
@@ -83,7 +83,7 @@ export const AboutMeSection = () => {
 
         <FadeContent blur={true} duration={500} easing="ease-out" initialOpacity={0}>
           <div className="h-[100%] rounded-md flex justify-center">
-            <Image className="size-[800px]" src={'/aboutme/blobAndProgrammer.svg'} width={0} height={0} alt='blob' priority/>
+            <Image className="sm:w-[800px] w-full h-auto" src={'/aboutme/blobAndProgrammer.svg'} width={0} height={0} alt='blob' priority/>
           </div>
         </FadeContent>
 

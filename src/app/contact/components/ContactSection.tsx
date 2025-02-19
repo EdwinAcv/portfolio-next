@@ -8,8 +8,8 @@ export const ContactSection = () => {
   const { tittle, description, contact, social } = contactJson;
 
   return (
-      <div className="rounded-2xl bg-opacity-2 min-w-full flex flex-col items-center justify-center ">
-        <h1 className="text-textPrimary text-[26px] sm:text-[30px] capitalize font-primary py-8 font-bold"> { tittle } </h1>
+      <div className="rounded-2xl bg-opacity-2 min-w-full flex flex-col items-center justify-center py-[45px] sm:py-[80px]">
+        <h1 className="text-textPrimary text-[26px] sm:text-[30px] capitalize font-primary pb-8 font-bold"> { tittle } </h1>
         <div className="max-display rounded-3xl mt-2 md:flex justify-center sm:justify-between items-start lg:w-full p-8">
 
           {/* form */}
@@ -22,7 +22,7 @@ export const ContactSection = () => {
             <div className="mb-4">
               <Image className='hover:cursor-pointer size-[80px]  sm:size-[135px]' src={'/logov2.svg'} alt='logo' width={0} height={0}/>
             </div>
-            <p className="pb-4 text-textPrimary font-mono text-[14px] sm:text-[16px]">
+            <p className="pb-4 text-textPrimary font-mono text-[14px] sm:text-[18px]">
               { description }
             </p>
             {

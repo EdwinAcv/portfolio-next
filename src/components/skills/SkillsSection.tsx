@@ -7,14 +7,14 @@ export const SkillsSection = ()=> {
 
   const { tittle, subtittle, frontEnd, backEnd, dataBase, design, others } = skills;
   const { web } = frontEnd;
-  const tecnologiesStyle = 'grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 ';
+  const tecnologiesStyle = 'grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 ';
   const mainContainerStyle = 'sm:grid-cols-1  lg:grid-cols-2 ';
 
   return (
-    <div className='max-display'>
-      <div className='m-4 p-4 sm:p-10 text-center font-mono'>
-        <h1 className='sm:mb-2  text-[25px] font-semibold leading-5 text-textPrimary'> { tittle } </h1>
-        <p className='text-[18px] text-textPrimary '>{ subtittle }</p>
+    <div className='max-display py-[45px] sm:py-[80px]'>
+      <div className='  mb-8 text-center font-mono'>
+        <h1 className='sm:mb-2  text-[30px] font-semibold leading-5 text-textPrimary'> { tittle } </h1>
+        <p className='text-[18px] text-textSecondary '>{ subtittle }</p>
       </div>
 
       {/* tecnologies */}
@@ -23,7 +23,7 @@ export const SkillsSection = ()=> {
         <div className=''>
         <AnimatedContent
           distance={150}
-          direction="horizontal"
+          direction="vertical"
           reverse={true}
           config={{ tension: 80, friction: 20 }}
           initialOpacity={0.2}
@@ -61,8 +61,8 @@ export const SkillsSection = ()=> {
         <div className=''>
         <AnimatedContent
           distance={150}
-          direction="horizontal"
-          reverse={false}
+          direction="vertical"
+          reverse={true}
           config={{ tension: 80, friction: 20 }}
           initialOpacity={0.2}
           animateOpacity
@@ -99,7 +99,7 @@ export const SkillsSection = ()=> {
 
         <AnimatedContent
           distance={150}
-          direction="horizontal"
+          direction="vertical"
           reverse={true}
           config={{ tension: 80, friction: 20 }}
           initialOpacity={0.2}
@@ -136,8 +136,8 @@ export const SkillsSection = ()=> {
         <div className=''>
         <AnimatedContent
           distance={150}
-          direction="horizontal"
-          reverse={false}
+          direction="vertical"
+          reverse={true}
           config={{ tension: 80, friction: 20 }}
           initialOpacity={0.2}
           animateOpacity
@@ -172,7 +172,7 @@ export const SkillsSection = ()=> {
         <div className=''>
         <AnimatedContent
           distance={150}
-          direction="horizontal"
+          direction="vertical"
           reverse={true}
           config={{ tension: 80, friction: 20 }}
           initialOpacity={0.2}

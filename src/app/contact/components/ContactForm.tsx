@@ -1,6 +1,7 @@
  "use client"
 import { useState } from "react";
 import { IoAlertCircle, IoCheckmarkCircle } from "react-icons/io5"
+import { toast, ToastContainer } from "react-toastify";
  
 
 
@@ -8,6 +9,7 @@ export const ContactForm = () => {
 
     const [formData, setFormData] = useState({ name: '', email: '', message: '' });
     const [status, setStatus] = useState('');
+    // const notify = () => toast.promise('Mensaje enviado !', { position: "bottom-left", autoClose: 2000,theme: 'colored' });
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target;
@@ -15,41 +17,49 @@ export const ContactForm = () => {
     };
 
     
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-
-    if(!formData.name || !formData.email || !formData.message) {
-        setStatus('faltan');
+    const handleSubmit = async (e: React.FormEvent) => {
+      e.preventDefault();
+  
+      if (!formData.name || !formData.email || !formData.message) {
+        setStatus("Faltan datos");
+        toast.error("Por favor, completa todos los campos.", { position: "bottom-left" });
         return;
-    }
-
-    setStatus('Enviando...');
-
-    try {
-      const response = await fetch('/api/sendEmail', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
-
-      console.log(response)
-
-      if (response.ok) {
-        setStatus('Mensaje enviado con éxito');
-        setFormData({ name: '', email: '', message: '' });
-      } else {
-        setStatus('Error al enviar el mensaje');
       }
-    } catch (error) {
-      setStatus('Error al enviar el mensaje');
-    }
-  };
+  
+      setStatus("Enviando...");
+  
+      const sendEmail = async () => {
+        const response = await fetch("/api/sendEmail", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        });
+  
+        if (!response.ok) throw new Error("Error al enviar el mensaje");
+  
+        return "¡Mensaje enviado con éxito! 🎉";
+      };
+  
+      toast.promise(sendEmail(), {
+        pending: "Procesando...",
+        success: "¡Mensaje enviado con éxito!",
+        error: "Error al enviar el mensaje",
+      }, { position: "bottom-left" });
+  
+      try {
+        await sendEmail();
+        setStatus("Mensaje enviado con éxito");
+        setFormData({ name: "", email: "", message: "" });
+      } catch (error) {
+        setStatus("Error al enviar el mensaje");
+      }
+    };
 
 
   return (
-        // <div className=""> {/*w-full max-w-sm*/}
+      <>
         <form onSubmit={handleSubmit}>
             <div className=" rounded-2xl  bg-opacity-65 shadow bg-background  p-6">
                 <div className="mb-4 flex items-center justify-between">
@@ -108,9 +118,12 @@ export const ContactForm = () => {
                     </div>
                 }
 
-                <p className="text-textPrimary">{status}</p>
+                {/* <p className="text-textPrimary">{status}</p> */}
             </div>
         </form>
-        //{/* </div> */}
+        <ToastContainer 
+          
+        />
+      </>
   )
 }
