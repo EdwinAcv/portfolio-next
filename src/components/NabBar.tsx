@@ -82,7 +82,10 @@ export const NabBar = () => {
     <div>
         <nav className='bg-navBar fixed top-0 left-0 w-full z-[15] sm:flex  justify-between items-center'>
             <div className='p-4 flex justify-between'>
+                {/* logo */}
                 <Image className='hover:cursor-pointer size-[40px]' src={'/logo.svg'} alt='logo' width={0} height={0}/>
+                
+                {/* button to open menu items movile */}
                 <div className='sm:hidden'> 
                     <MyButton
                         className='text-gray-500 hover:text-white'
@@ -91,6 +94,8 @@ export const NabBar = () => {
                     />        
                 </div>
             </div>
+
+            {/* menu items */}
             <ul className={ `hidden sm:visible sm:flex transition-transform duration-300 ease-in-out origin-top
                     ` 
                 }>
@@ -99,13 +104,15 @@ export const NabBar = () => {
                 ))}
             </ul>
         </nav>
-            <ul className={ `bg-navBar bg-opacity-90 z-10 mt-[72px] sm:hidden fixed w-full  transition-transform duration-300 ease-in-out origin-top
-                   ${openMenu ? 'visible scale-y-100' : 'invincible scale-y-0'} ` 
-                }>
-                {rutas.map((ruta) => (
-                     <NavBarMenuItem activeSection={activeSection} key={ruta.path} {...ruta}/>
-                ))}
-            </ul>
+
+        {/* menu items movile */}
+        <ul className={ `bg-navBar bg-opacity-90 z-10 mt-[72px] sm:hidden fixed w-full  transition-transform duration-300 ease-in-out origin-top
+                ${openMenu ? 'scale-y-100' : 'scale-y-0'} ` 
+            }>
+            {rutas.map((ruta) => (
+                    <NavBarMenuItem activeSection={activeSection} key={ruta.path} {...ruta}/>
+            ))}
+        </ul>
     </div>
   )
 }

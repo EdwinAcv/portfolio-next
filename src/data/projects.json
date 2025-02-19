@@ -20,7 +20,7 @@
             ],
             "buttons": [
                 { "icon": "folder", "tooltipName": "Más detalles", "disabled": false, "typeAction": "void" },
-                { "icon": "link", "tooltipName": "Ver sitio", "disabled": false, "typeAction": "link", "url": "https://lotoreal.com" }
+                { "icon": "link", "tooltipName": "Ver sitio", "disabled": false, "typeAction": "link", "url": "https://www.lotoreal.com.do/" }
             ]
         },
         {
