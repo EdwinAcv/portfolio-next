@@ -1,7 +1,8 @@
 import Image from "next/image";
 import contactJson from "@/data/contact.json";
-import Link from "next/link";
 import { ContactForm } from "@/app/contact/components/ContactForm";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+import Link from "next/link";
 
 export const ContactSection = () => {
 
@@ -46,18 +47,16 @@ export const ContactSection = () => {
             {/* <h3>Sigueme en</h3> */}
   
             <div className="flex gap-4">
-              {
-                social.map( ( { label, value, icon } ) => {
-                  return (
-                    <Link key={label} href={value} target="_blank" rel="noopener noreferrer">
-                        <div className="bg-white p-2 rounded-md">
-                         <Image src={`/contact/${icon}`} alt={label} width={0} height={0}
-                            className="hover:bg-slate-200 rounded-md size-[25px] sm:size-[30px]"
-                          />
-                        </div>
-                    </Link>
-                )})
-                }
+              <Link href={social[0].value} target="_blank">
+                <FaGithub 
+                  className="size-[35px] text-white hover:text-gray-600 hover:cursor-pointer transition-colors duration-300"  
+                />
+              </Link>
+              <Link href={social[1].value} target="_blank">
+                <FaLinkedin 
+                  className="size-[35px] text-white hover:text-gray-600 hover:cursor-pointer transition-colors duration-300"  
+                />
+              </Link>
             </div>
           </div>
 
