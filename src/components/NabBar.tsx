@@ -1,5 +1,5 @@
 "use client"
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { NavBarMenuItem } from './NavBarMenuItem';
 import Image from 'next/image';
 import { useRouter, useSearchParams } from 'next/navigation';
@@ -37,10 +37,11 @@ export const NabBar = () => {
     const [activeSection, setActiveSection] = useState(param);
     const [openMenu, setOpenMenu] = useState(false);
     const [manualScroll, setManualScroll] = useState(false);
+    const navRef = useRef<HTMLDivElement>(null);
 
     const toggleMenu = () => {
+        setOpenMenu( !openMenu );
         setTimeout(() => {
-            setOpenMenu(!openMenu);
         }, 500);
     }
 
@@ -65,13 +66,11 @@ export const NabBar = () => {
             if (newSection !== activeSection) {
               setActiveSection(newSection);
               setManualScroll(true);
-              setTimeout(() => {
                 
-                  history.replaceState(null, '', `?section=${newSection}`);
-              }, 1000);
+                history.replaceState(null, '', `?section=${newSection}`);
             }
           },
-          { threshold: 0.75 } // Se activa cuando el 60% de la sección es visible
+          { threshold: 0.6 } // Se activa cuando el 60% de la sección es visible
         );
     
         sections.forEach((section) => observer.observe(section));
@@ -84,10 +83,23 @@ export const NabBar = () => {
     //      router.push(`?section=${param}`, { scroll: false });// toma la seccion actual cuando se recarga la pagina
     // }), []
 
+
+    useEffect(() => {
+        const handleClickOutside = (event: MouseEvent) => {
+          if (navRef.current && !navRef.current.contains(event.target as Node)) {
+            setOpenMenu(false);
+          }
+        };
+    
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => {
+          document.removeEventListener('mousedown', handleClickOutside);
+        };
+      }, [navRef]);
     
 
   return (
-    <div>
+    <div ref={navRef}>
         <nav className='bg-navBar fixed top-0 left-0 w-full z-[15] sm:flex  justify-between items-center'>
             <div className='p-4 flex justify-between'>
                 {/* logo */}
