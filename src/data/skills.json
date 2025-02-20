@@ -1,7 +1,7 @@
 
  {
-    "tittle": "Tecnologias",
-    "subtittle": "Estas son las tecnologias que manejo actualmente:",
+    "tittle": "Tecnologías",
+    "subtittle": "Estas son las tecnologías que manejo actualmente:",
     "frontEnd":{
         "web": [
             { "tittle": "HTML", "icon": "html.svg" },

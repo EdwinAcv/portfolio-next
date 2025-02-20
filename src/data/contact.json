@@ -1,5 +1,5 @@
 {
-    "tittle": "contactame",
+    "tittle": "contáctame",
     "description": "Si necesitas ayuda con un proyecto, quieres colaborar o simplemente quieres saludar, no dudes en ponerte en contacto conmigo. ¡Estoy aquí para ayudar!",
     "contact" :[
         {"label": "phone", "value": "(829) 783-0938", "icon": "whatsapp.svg"},

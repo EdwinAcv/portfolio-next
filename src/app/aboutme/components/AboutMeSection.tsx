@@ -13,11 +13,10 @@ export const AboutMeSection = () => {
     console.log('All letters have animated!');
     };
     const easeOutCubic: EasingFunction = (t) => (--t) * t * t + 1;
-    const { tittle, subTittle } = Data;
+    const { tittle, subTittle, description } = Data;
   return (
     <div className="max-display min-h-[400px] grid md:grid-cols-2 items-center mt-10 px-4 py-[50px] md:py-[120px] ">
         <div className="mt-[72px]">
-          {/* <h1 className="text-[2.7rem] md:text-[2.8rem] lg:text-[3.5rem] xl:text-[4.5rem] leading-[2.8rem] lg:leading-[4rem] text-textPrimary font-mono"> { tittle } </h1> */}
           <SplitText
             text={tittle}
             className="text-[2.7rem] md:text-[2.8rem] lg:text-[3.5rem] xl:text-[4.5rem] leading-[2.8rem] lg:leading-[4rem] text-textPrimary font-mono"
@@ -48,15 +47,13 @@ export const AboutMeSection = () => {
 
           {/* description */}
             <div className='p-4 bg-black text-textPrimary text-[1rem] lg:text-[1.3rem] font-primary rounded-2xl leading-[1.2rem] lg:leading-[1.3rem]'>
-              <p>
-                Me apaciona el mundo del desarrollo porque siempre hay algo nuevo por aprender y mejorar. Trabajo tanto en frontend
-                como en backend, y disfruto construir aplicaciones funcionales y bien estructuradas.
-                <br /> <br />
-                Siempre busco mejorar mis habilidades y mantenerme al día con las tecnologías. Me gusta enfrentar desafíos
-                que me ayuden a crecer, ya sea optimizando código, aprendiendo nuevas herramientas o resolviendo problemas
-                en proyectos.
-      
-              </p>
+              {
+                description.map( ( paragraph, index ) => (
+                  <div key={ paragraph }>
+                    <p className={` ${!(description.length === index + 1) && 'pb-5'} `}> { paragraph } </p>
+                  </div>
+                ) )
+              }
             </div>
 
           {/*  Button  download cv*/}

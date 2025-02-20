@@ -1,6 +1,6 @@
 {
-    "tittle": "Projectos",
-    "subtittle": "Estos son los projectos en los que he trabajado",
+    "tittle": "Proyectos",
+    "subtittle": "Estos son los proyectos en los que he trabajado:",
     "projects": [
         {
             "name": "Loto Real",
@@ -46,14 +46,14 @@
         },
         {
             "name": "Monitoreo de expedientes",
-            "description": "Portal para consultar informacion en un API sobre expedientes que constantemente van cambiando, cada vez que cambien se debe enviar un correro informado que expediente y que informacion cambio.",
+            "description": "Portal para consultar información de un API sobre expedientes que constantemente van cambiando, cada vez que cambien se debe enviar un correo informado que expediente y que información cambio.",
             "images": [
                 "seguimientoExpedientes.png",
                 "seguimiento1.png",
                 "seguimiento2.png",
                 "seguimiento3.png"
             ],
-            "autoria": "total autoria",
+            "autoria": "total autoría",
             "tecnologies": [
                 { "tittle": "typescript", "icon": "typescript.svg" },
                 { "tittle": "node.js", "icon": "nodejs.svg" },
@@ -63,21 +63,6 @@
             ],
             "buttons": [
                 { "icon": "folder", "tooltipName": "Más detalles", "disabled": false, "typeAction": "void" },
-                { "icon": "link", "tooltipName": "Ver sitio", "disabled": true, "typeAction": "link", "url": "" }
-            ]
-        },
-        {
-            "name": "Project 4",
-            "description": "This is a description of project 4",
-            "images": [
-                "LotoReal.webp"
-            ],
-            "autoria": "colavoracion",
-            "tecnologies": [
-                
-            ],
-            "buttons": [
-                { "icon": "folder", "tooltipName": "Más detalles", "disabled": true, "typeAction": "void" },
                 { "icon": "link", "tooltipName": "Ver sitio", "disabled": true, "typeAction": "link", "url": "" }
             ]
         }
