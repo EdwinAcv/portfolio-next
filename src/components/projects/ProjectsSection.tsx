@@ -2,7 +2,6 @@
 import { IProjects } from '@/utils/interfaces';
 import procjetsJsons from '../../data/projects.json';
 import { ButtonSection } from '@/app/projects/components/ButtonSection';
-import AnimatedContent from '../AnimatedContent';
 import Image from 'next/image';
 import FadeContent from '../FadeContent';
 
@@ -22,30 +21,24 @@ export const ProjectsSection = () => {
         {projects.map((project, index) => {
           const { name, description, images } = project;
           return (
+            <FadeContent key={name} blur={true} delay={index * 200} duration={1000} easing="ease-out" initialOpacity={0}>
+              <div className='p-4 bg-gray-900 bg-opacity-75 border shadow-white border-[#4B5563] sm:w-[350px] rounded-2xl'>
+                <div>
+                  <div className='w-full h-[200px] bg-poject-preview '>
+                    <Image className=' w-full h-full rounded-lg' src={`/${images[0]}`} width={350} height={0} alt={images[0]}/>
+                  </div>
+                </div>
 
-
-          <FadeContent key={name} blur={true} delay={index * 200} duration={1000} easing="ease-out" initialOpacity={0}>
-            <div className='p-4 bg-gray-900 bg-opacity-75 border shadow-white border-[#4B5563] sm:w-[350px] rounded-2xl'>
-              <div>
-
-                {/* { images.length > 0 && <div className={`bg-red-400 w-full h-[200px] bg-[url(/${images[0]})]  bg-poject-preview rounded-lg`}></div> } */}
-                
-                <div className='w-full h-[200px] bg-poject-preview '>
-
-                  <Image className=' w-full h-full rounded-lg' src={`/${images[0]}`} width={350} height={0} alt={images[0]}/>
+                <div className=''>
+                  <h3 className='font-primary font-bold text-textPrimary py-2'>{name}</h3>
+                  <div className='min-h-[150px] overflow-hidden '>
+                    <p className='font-primary text-textPrimary'>{description}</p>
+                  </div>
+                  {/* buttons projects */}
+                  <ButtonSection {...project as IProjects} />
                 </div>
               </div>
-
-              <div className=''>
-                <h3 className='font-primary font-bold text-textPrimary py-2'>{name}</h3>
-                <div className='min-h-[150px] overflow-hidden '>
-                  <p className='font-primary text-textPrimary'>{description}</p>
-                </div>
-                {/* buttons projects */}
-                <ButtonSection {...project as IProjects} />
-              </div>
-            </div>
-          </FadeContent>
+            </FadeContent>
           );
         })}
       </div>

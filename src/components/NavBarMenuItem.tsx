@@ -4,11 +4,13 @@ interface IRuta {
   label: string;
   path: string;
   activeSection: string;
+  setManualScroll: (value: boolean) => void;
 }
 
-export const NavBarMenuItem = ({ label, path, activeSection }: IRuta) => {
+export const NavBarMenuItem = ({ label, path, activeSection, setManualScroll }: IRuta) => {
+  
   return (
-    <Link href={`?section=${path}`} scroll={false}>
+    <Link href={`?section=${path}`} scroll={false} onClick={() => { setManualScroll(false) }}>
       <div
         className={`
           ${activeSection === path ? "text-textPrimary font-bold border-b-2 " : "text-gray-400 "} 

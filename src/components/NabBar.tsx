@@ -30,53 +30,61 @@ const rutas = [
 ]
 
 export const NabBar = () => {
-    // console.log('nav');
     const searchParams = useSearchParams();
-    const param = searchParams.get("section") || "aboutme"; // Si no hay `section`, usa `aboutme`
+    const param = searchParams.get("section") || "aboutme";
     
     const router = useRouter();
     const [activeSection, setActiveSection] = useState(param);
-    const [openMenu, setoPenMenu] = useState(false);
+    const [openMenu, setOpenMenu] = useState(false);
+    const [manualScroll, setManualScroll] = useState(false);
 
     const toggleMenu = () => {
         setTimeout(() => {
-            setoPenMenu(!openMenu);
+            setOpenMenu(!openMenu);
         }, 500);
     }
 
     // Hacer scroll suave cuando cambia el query param
     useEffect(() => {
         const sectionElement = document.getElementById(param);
-        if (sectionElement) {
+        if (sectionElement && !manualScroll) {
+    
             sectionElement.scrollIntoView({ behavior: "smooth" });
         }
     }, [param]);
 
+    
     useEffect(() => {
         const sections = document.querySelectorAll("section"); // Seleccionar todas las secciones
         const observer = new IntersectionObserver(
-            (entries) => {
-                const visibleSection = entries.find((entry) => entry.isIntersecting);
-                if (!visibleSection) return; 
-
-                const newSection = visibleSection.target.id;
-                if (!(newSection !== activeSection)) return;
+          (entries) => {
+            const visibleSection = entries.find((entry) => entry.isIntersecting);
+            if (!visibleSection) return;
+    
+            const newSection = visibleSection.target.id;
+            if (newSection !== activeSection) {
+              setActiveSection(newSection);
+              setManualScroll(true);
+              setTimeout(() => {
                 
-                setActiveSection(newSection);
-                
-                // router.push(`?sectione=${newSection}`, { scroll: false });
-            }, { threshold: 0.6 } // Se activa cuando el 60% de la sección es visible
+                  history.replaceState(null, '', `?section=${newSection}`);
+              }, 1000);
+            }
+          },
+          { threshold: 0.75 } // Se activa cuando el 60% de la sección es visible
         );
+    
         sections.forEach((section) => observer.observe(section));
     
         return () => observer.disconnect(); // Limpiar el observer al desmontar
-
-    }, [activeSection]);
+      }, [activeSection]);
     
-    useEffect(() => {
-        const param = searchParams.get("section") || "aboutme"; // Si no hay `section`, usa `aboutme`
-         router.push(`?section=${param}`, { scroll: false });// toma la seccion actual cuando se recarga la pagina
-    }), []
+    // useEffect(() => {
+    //     const param = searchParams.get("section") || "aboutme"; // Si no hay `section`, usa `aboutme`
+    //      router.push(`?section=${param}`, { scroll: false });// toma la seccion actual cuando se recarga la pagina
+    // }), []
+
+    
 
   return (
     <div>
@@ -100,7 +108,7 @@ export const NabBar = () => {
                     ` 
                 }>
                 {rutas.map((ruta) => (
-                     <NavBarMenuItem activeSection={activeSection} key={ruta.path} {...ruta}/>
+                     <NavBarMenuItem setManualScroll={setManualScroll} activeSection={activeSection} key={ruta.path} {...ruta}/>
                 ))}
             </ul>
         </nav>
@@ -110,7 +118,7 @@ export const NabBar = () => {
                 ${openMenu ? 'scale-y-100' : 'scale-y-0'} ` 
             }>
             {rutas.map((ruta) => (
-                    <NavBarMenuItem activeSection={activeSection} key={ruta.path} {...ruta}/>
+                    <NavBarMenuItem setManualScroll={setManualScroll} activeSection={activeSection} key={ruta.path} {...ruta}/>
             ))}
         </ul>
     </div>
