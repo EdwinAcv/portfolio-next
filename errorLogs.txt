@@ -1,0 +1,12 @@
+2025-02-21T00:26:33.071Z - Error: Missing credentials for "PLAIN"
+2025-02-21T00:26:33.147Z - Error: Missing credentials for "PLAIN"
+2025-02-21T00:26:36.895Z - Error: Missing credentials for "PLAIN"
+2025-02-21T00:26:36.901Z - Error: Missing credentials for "PLAIN"
+2025-02-21T00:30:30.271Z - Error: Missing credentials for "PLAIN"
+2025-02-21T00:30:30.282Z - Error: Missing credentials for "PLAIN"
+2025-02-21T00:30:44.821Z - Error: Missing credentials for "PLAIN"
+2025-02-21T00:30:44.852Z - Error: Missing credentials for "PLAIN"
+2025-02-21T00:33:52.494Z - Error: Invalid login: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials 3f1490d57ef6-e5dae0d723csm4294354276.40 - gsmtp
+2025-02-21T00:33:52.503Z - Error: Invalid login: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials 00721157ae682-6fb745ea173sm24336657b3.105 - gsmtp

@@ -9,9 +9,6 @@ import AnimatedContent from "@/components/AnimatedContent";
 import FadeContent from "@/components/FadeContent";
 
 export const AboutMeSection = () => {
-    const handleAnimationComplete = () => {
-    console.log('All letters have animated!');
-    };
     const easeOutCubic: EasingFunction = (t) => (--t) * t * t + 1;
     const { tittle, subTittle, description } = Data;
   return (
@@ -26,7 +23,6 @@ export const AboutMeSection = () => {
             easing={easeOutCubic}
             threshold={0.2}
             rootMargin="-50px"
-            onLetterAnimationComplete={handleAnimationComplete}
           />
         
          

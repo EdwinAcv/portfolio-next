@@ -19,6 +19,8 @@ export const ContactForm = () => {
     
     const handleSubmit = async (e: React.FormEvent) => {
       e.preventDefault();
+
+      if( status === 'Enviando...') return;
   
       if (!formData.name || !formData.email || !formData.message) {
         setStatus("Faltan datos");
@@ -27,19 +29,46 @@ export const ContactForm = () => {
       }
   
       setStatus("Enviando...");
+      // try {
+      //   const response = await fetch('/api/sendEmail', {
+      //     method: 'POST',
+      //     headers: {
+      //       'Content-Type': 'application/json',
+      //     },
+      //     body: JSON.stringify(formData),
+      //   });
+  
+      //   console.log(response)
+  
+      //   if (response.ok) {
+      //     setStatus('Mensaje enviado con éxito');
+      //     setFormData({ name: '', email: '', message: '' });
+      //   } else {
+      //     setStatus('Error al enviar el mensaje');
+      //   }
+      // } catch (error) {
+      //   setStatus('Error al enviar el mensaje');
+      // }
   
       const sendEmail = async () => {
-        const response = await fetch("/api/sendEmail", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(formData),
-        });
+        
+        try {
+          const response = await fetch("/api/sendEmail", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(formData),
+          });
+          if (!response.ok) throw new Error("Error al enviar el mensaje");
   
-        if (!response.ok) throw new Error("Error al enviar el mensaje");
-  
-        return "¡Mensaje enviado con éxito! 🎉";
+          setStatus("Mensaje enviado con éxito");
+          setFormData({ name: "", email: "", message: "" });
+          return "¡Mensaje enviado con éxito!";
+
+        } catch (error) {
+          setStatus("Error al enviar el mensaje");
+        }
       };
   
       toast.promise(sendEmail(), {
@@ -48,13 +77,6 @@ export const ContactForm = () => {
         error: "Error al enviar el mensaje",
       }, { position: "bottom-left" });
   
-      try {
-        await sendEmail();
-        setStatus("Mensaje enviado con éxito");
-        setFormData({ name: "", email: "", message: "" });
-      } catch (error) {
-        setStatus("Error al enviar el mensaje");
-      }
     };
 
 
@@ -101,7 +123,9 @@ export const ContactForm = () => {
               
                 <button 
                   disabled={ status === 'Enviando...' } 
-                  className="w-full rounded-lg bg-gray-900 py-2.5 text-sm text-white transition duration-300 hover:bg-gray-800 font-semibold"
+                  className={`w-full rounded-lg py-2.5
+                      ${status === 'Enviando...' ? 'bg-gray-500' : 'bg-gray-900 text-sm text-white transition duration-300 hover:bg-gray-800 font-semibold'}
+                    `}
                 > 
                   Enviar
                 </button>
@@ -111,11 +135,11 @@ export const ContactForm = () => {
                     //     <IoCheckmarkCircle color="#14532d" size={28}/>
                     //     <p className="font-primary text-green-900"> El correo ha sido enviado </p> 
                     // </div>
-                    status === 'faltan' &&
-                    <div className={`bg-red-300 rounded-lg p-3 mt-4 flex items-center gap-2`}>
-                        <IoAlertCircle color="#dc2626" size={28}/>
-                        <p className="font-primary text-red-900"> Debe llenar todos los campos </p> 
-                    </div>
+                    // status === 'faltan' &&
+                    // <div className={`bg-red-300 rounded-lg p-3 mt-4 flex items-center gap-2`}>
+                    //     <IoAlertCircle color="#dc2626" size={28}/>
+                    //     <p className="font-primary text-red-900"> Debe llenar todos los campos </p> 
+                    // </div>
                 }
 
                 {/* <p className="text-textPrimary">{status}</p> */}

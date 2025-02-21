@@ -3,7 +3,7 @@ import { Carousel } from './Carousel';
 import { IProjects } from '@/utils/interfaces';
 import Image from 'next/image';
 import { MyButton } from './MyButton';
-import { TiDeleteOutline } from 'react-icons/ti';
+import { TiDelete } from 'react-icons/ti';
 
 interface IProjectsModal {
   isOpen: boolean;
@@ -32,7 +32,7 @@ interface IProjectsModal {
              {/* content to display */}
               <div className='relative'>
                 <div className='bg-gray-900 bg-opacity-60 z-10 sticky w-full p-2 top-0 flex flex-col items-end  '>
-                  <MyButton icon={ <TiDeleteOutline size={40}/> } action={()=>{ setIsOpen(false) }}/>
+                  <MyButton icon={ <TiDelete size={40}/> } action={()=>{ setIsOpen(false) }}/>
                 </div>
 
                 <div className=''>

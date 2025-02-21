@@ -2,7 +2,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { NavBarMenuItem } from './NavBarMenuItem';
 import Image from 'next/image';
-import { useRouter, useSearchParams } from 'next/navigation';
+import { useSearchParams } from 'next/navigation';
 import { MdMenu } from 'react-icons/md';
 import { MyButton } from '@/app/projects/components/MyButton';
 
@@ -11,10 +11,6 @@ const rutas = [
         label: 'sobre mi',
         path: 'aboutme',
     },
-    // {
-    //     label: 'acerca de',
-    //     path: '/aboutme',
-    // },
     {
         label: 'tecnologias',
         path: 'skills',
@@ -33,7 +29,6 @@ export const NabBar = () => {
     const searchParams = useSearchParams();
     const param = searchParams.get("section") || "aboutme";
     
-    const router = useRouter();
     const [activeSection, setActiveSection] = useState(param);
     const [openMenu, setOpenMenu] = useState(false);
     const [manualScroll, setManualScroll] = useState(false);
@@ -78,11 +73,6 @@ export const NabBar = () => {
         return () => observer.disconnect(); // Limpiar el observer al desmontar
       }, [activeSection]);
     
-    // useEffect(() => {
-    //     const param = searchParams.get("section") || "aboutme"; // Si no hay `section`, usa `aboutme`
-    //      router.push(`?section=${param}`, { scroll: false });// toma la seccion actual cuando se recarga la pagina
-    // }), []
-
 
     useEffect(() => {
         const handleClickOutside = (event: MouseEvent) => {
@@ -95,7 +85,7 @@ export const NabBar = () => {
         return () => {
           document.removeEventListener('mousedown', handleClickOutside);
         };
-      }, [navRef]);
+    }, [navRef]);
     
 
   return (
