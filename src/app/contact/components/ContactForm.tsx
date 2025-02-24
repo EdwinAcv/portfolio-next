@@ -29,27 +29,6 @@ export const ContactForm = () => {
       }
   
       setStatus("Enviando...");
-      // try {
-      //   const response = await fetch('/api/sendEmail', {
-      //     method: 'POST',
-      //     headers: {
-      //       'Content-Type': 'application/json',
-      //     },
-      //     body: JSON.stringify(formData),
-      //   });
-  
-      //   console.log(response)
-  
-      //   if (response.ok) {
-      //     setStatus('Mensaje enviado con éxito');
-      //     setFormData({ name: '', email: '', message: '' });
-      //   } else {
-      //     setStatus('Error al enviar el mensaje');
-      //   }
-      // } catch (error) {
-      //   setStatus('Error al enviar el mensaje');
-      // }
-  
       const sendEmail = async () => {
         
         try {
@@ -60,7 +39,15 @@ export const ContactForm = () => {
             },
             body: JSON.stringify(formData),
           });
-          if (!response.ok) throw new Error("Error al enviar el mensaje");
+
+          console.log(response)
+          console.log("Status: "+response.status)
+          if(response.status === 429 ) {
+            throw new Error("Límite de solicitudes alcanzado");
+          }
+           
+          if (!response.ok) throw new Error("Error al enviar el mensajeaaa");
+
   
           setStatus("Mensaje enviado con éxito");
           setFormData({ name: "", email: "", message: "" });
