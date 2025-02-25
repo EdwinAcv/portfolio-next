@@ -11,6 +11,7 @@ interface IImages {
 
 export const Carousel = ({images}:IImages) => {
     const [activeIndex, setActiveIndex] = useState(0);
+    const [loading, setLoading] = useState(true);
 
     const prevSlide = () => {
       setActiveIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
@@ -18,6 +19,10 @@ export const Carousel = ({images}:IImages) => {
   
     const nextSlide = () => {
       setActiveIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+    };
+
+    const handleImageLoad = () => {
+      setLoading(false);
     };
   
     return (
@@ -27,16 +32,25 @@ export const Carousel = ({images}:IImages) => {
           {images.map((src, index) => (
             <div
               key={index}
-              className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${
+              className={`absolute inset-0 transition-opacity duration-700 ease-in-out flex justify-center items-center ${
                 index === activeIndex ? "opacity-100" : "opacity-0"
               }`}
             >
+
+              {
+                 loading && index === activeIndex && (
+                  <div className="relative left-50 top-0 animate-spin inline-block size-[180px] border-[25px] border-current border-t-transparent text-gray-600 rounded-full dark:text-gray-500" role="status" aria-label="loading">
+                      <span className="sr-only">Loading...</span>
+                  </div>
+                )
+              }
               <Image
                 width={600}
                 height={300}
                 src={`/${src}`}
-                className="w-full h-full object-contain"
+                className="w-full h-full object-contain transition-opacity duration-700 ease-in-out"
                 alt={`Slide ${index + 1}`}
+                onLoad={handleImageLoad}
               />
             </div>
           ))}

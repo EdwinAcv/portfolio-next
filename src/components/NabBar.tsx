@@ -31,7 +31,6 @@ export const NabBar = () => {
     
     const [activeSection, setActiveSection] = useState(param);
     const [openMenu, setOpenMenu] = useState(false);
-    const [manualScroll, setManualScroll] = useState(false);
     const navRef = useRef<HTMLDivElement>(null);
     const router = useRouter();
 
@@ -90,6 +89,8 @@ export const NabBar = () => {
                 <Image className='hover:cursor-pointer size-[40px]' src={'/logo.svg'} alt='logo' width={0} height={0}/>
                 
                 {/* button to open menu items movile */}
+
+                
                 <div className='sm:hidden'> 
                     <MyButton
                         className='text-gray-500 hover:text-white'
