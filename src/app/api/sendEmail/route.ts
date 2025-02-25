@@ -7,7 +7,7 @@ import { LRUCache } from 'lru-cache';
 // Configuración de la caché para limitar el número de peticiones
 const rateLimitCache = new LRUCache<string, { count: number, timestamp: number }>({
   max: 500, // Máximo 500 IPs almacenadas
-  ttl: 60 * 5000, // 1 minuto de retención
+  ttl: 60 * 15000, // 5 minuto de retención
 });
 
 export async function POST(req: Request) {
@@ -15,7 +15,7 @@ export async function POST(req: Request) {
   
   // Aplicar rate limit (máximo 5 intentos por minuto)
   const requestInfo = rateLimitCache.get(clientIP) || { count: 0, timestamp: Date.now() };
-  if (requestInfo.count >= 1) {
+  if (requestInfo.count >= 3) {
     return NextResponse.json({ message: "Límite de solicitudes alcanzado. Intente más tarde." }, { status: 429 });
   }
 
@@ -41,7 +41,8 @@ export async function POST(req: Request) {
     text: `Sr/a "${name}" Correo: "${email}"\n\n ${message} \n\n\n`,
   };
 
-  const logError = (error: any) => {
+  
+  const logError = (error: Error) => {
     const logMessage = `${new Date().toISOString()} - IP: ${clientIP} - Error: ${error.message}\n`;
     const logFilePath = path.join(process.cwd(), 'errorLogs.txt');
     fs.appendFileSync(logFilePath, logMessage, 'utf8');
@@ -51,7 +52,7 @@ export async function POST(req: Request) {
     await transporter.sendMail(mailOptions);
     return NextResponse.json({ message: 'Correo enviado satisfactoriamente' }, { status: 200 });
   } catch (error) {
-    logError(error);
+    logError(error as Error);
     return NextResponse.json({ message: 'Error procesando la solicitud', error }, { status: 500 });
   }
 }

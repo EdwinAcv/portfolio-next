@@ -1,6 +1,5 @@
  "use client"
 import { useState } from "react";
-import { IoAlertCircle, IoCheckmarkCircle } from "react-icons/io5"
 import { toast, ToastContainer } from "react-toastify";
  
 
@@ -30,7 +29,6 @@ export const ContactForm = () => {
   
       setStatus("Enviando...");
       const sendEmail = async () => {
-        
         try {
           const response = await fetch("/api/sendEmail", {
             method: "POST",
@@ -39,30 +37,38 @@ export const ContactForm = () => {
             },
             body: JSON.stringify(formData),
           });
-
-          console.log(response)
-          console.log("Status: "+response.status)
-          if(response.status === 429 ) {
-            throw new Error("Límite de solicitudes alcanzado");
+    
+          if (response.status === 429) {
+            throw new Error("Límite de solicitudes alcanzado. Intente más tarde.");
           }
-           
-          if (!response.ok) throw new Error("Error al enviar el mensajeaaa");
-
-  
+    
+          if (!response.ok) {
+            const errorData = await response.json();
+            throw new Error(errorData.message || "Error al enviar el mensaje.");
+          }
+    
           setStatus("Mensaje enviado con éxito");
           setFormData({ name: "", email: "", message: "" });
           return "¡Mensaje enviado con éxito!";
-
         } catch (error) {
           setStatus("Error al enviar el mensaje");
+          throw error; // Es importante lanzar el error para que `toast.promise` lo maneje
         }
       };
-  
-      toast.promise(sendEmail(), {
-        pending: "Procesando...",
-        success: "¡Mensaje enviado con éxito!",
-        error: "Error al enviar el mensaje",
-      }, { position: "bottom-left" });
+    
+      toast.promise(
+        sendEmail(),
+        {
+          pending: "Procesando...",
+          success: "¡Mensaje enviado con éxito!",
+          error: {
+            render({ data }: { data:Error }) {
+              return data.message || "Error al enviar el mensaje";
+            },
+          },
+        },
+        { position: "bottom-left" }
+      );
   
     };
 

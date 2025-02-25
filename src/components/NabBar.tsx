@@ -86,7 +86,7 @@ export const NabBar = () => {
         <nav className='bg-navBar fixed top-0 left-0 w-full z-[15] sm:flex  justify-between items-center'>
             <div className='p-4 flex justify-between'>
                 {/* logo */}
-                <Image className='hover:cursor-pointer size-[40px]' src={'/logo.svg'} alt='logo' width={0} height={0}/>
+                <Image className='hover:cursor-pointer size-[40px]' src={'/logov2.svg'} alt='logo' width={0} height={0}/>
                 
                 {/* button to open menu items movile */}
 
