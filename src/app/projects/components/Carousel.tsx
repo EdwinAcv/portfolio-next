@@ -29,30 +29,33 @@ export const Carousel = ({images}:IImages) => {
       <div className="relative w-full px-4">
         {/* Carousel wrapper */}
         <div className="relative h-56 md:h-96 overflow-hidden rounded-lg">
+          
           {images.map((src, index) => (
-            <div
-              key={index}
-              className={`absolute inset-0 transition-opacity duration-700 ease-in-out flex justify-center items-center ${
-                index === activeIndex ? "opacity-100" : "opacity-0"
-              }`}
-            >
+            
+              <div
+                key={index}
+                className={`absolute inset-0 transition-opacity duration-700 ease-in-out flex justify-center items-center ${
+                  index === activeIndex ? "opacity-100" : "opacity-0"
+                }`}
+              >
 
-              {
-                 loading && index === activeIndex && (
-                  <div className="relative left-50 top-0 animate-spin inline-block size-[180px] border-[25px] border-current border-t-transparent text-gray-600 rounded-full dark:text-gray-500" role="status" aria-label="loading">
-                      <span className="sr-only">Loading...</span>
-                  </div>
-                )
-              }
-              <Image
-                width={600}
-                height={300}
-                src={`/${src}`}
-                className="w-full h-full object-contain transition-opacity duration-700 ease-in-out"
-                alt={`Slide ${index + 1}`}
-                onLoad={handleImageLoad}
-              />
-            </div>
+                  {
+                    loading && index === activeIndex && (
+                      <div className="z-10 animate-spin inline-block size-[80px] border-[5px] sm:size-[180px] sm:border-[15px] border-current border-t-transparent text-gray-600 rounded-full dark:text-gray-500" role="status" aria-label="loading">
+                          <span className="sr-only">Loading...</span>
+                      </div>
+                    )
+                  }
+                  <Image
+                    width={600}
+                    height={300}
+                    src={`/${src}`}
+                    className={`absolute w-full h-full object-contain transition-opacity duration-700 ease-in-out ${ !loading ? "opacity-100" : "opacity-0" }`}
+                    alt={`Slide ${index + 1}`}
+                    onLoad={handleImageLoad}
+                  />
+                </div>
+
           ))}
         </div>
   

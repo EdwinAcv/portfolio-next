@@ -13,7 +13,7 @@ interface IProjectsModal {
 
   
   export const ProjectsModal = ( { isOpen, setIsOpen, data }:IProjectsModal ) => {
-    const tecnologiesStyle = 'flex flex-wrap justify-between';
+    const tecnologiesStyle = 'flex flex-wrap justify-center sm:justify-between';
 
     const { name, description, autoria, tecnologies, images } = data;
     return (
@@ -27,7 +27,7 @@ interface IProjectsModal {
           <div className="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
             <DialogPanel
               transition
-              className="relative transform overflow-y-auto min-w-[50vw] max-h-[90vh] max-w-[90vw] sm:max-w-lg rounded-lg bg-gray-900 text-left  backdrop-blur-2xl duration-300 ease-out data-[closed]:transform-[scale(95%)] data-[closed]:opacity-0 "
+              className="relative transform overflow-y-auto min-w-[50vw] my-auto max-h-[90vh] max-w-[90vw] sm:max-w-lg rounded-lg bg-gray-900 text-left  backdrop-blur-2xl duration-300 ease-out data-[closed]:transform-[scale(95%)] data-[closed]:opacity-0 "
             >
              {/* content to display */}
               <div className='relative'>
@@ -41,15 +41,14 @@ interface IProjectsModal {
                   {/* info */}
                   <div className='m-8'>
 
-                    <h2 className=" font-bold text-textPrimary font-primary text-[24px]"> { name } </h2>
+                    <h2 className=" font-bold text-textPrimary font-primary text-[18px] sm:text-[24px] text-wrap"> { name } </h2>
 
-                    <p className="mt-2  text-textPrimary font-primary"> { description } </p>
+                    <p className="mt-2  text-textPrimary font-primary text-[14px] sm:text-[16px]"> { description } </p>
                     <p className="mt-4  font-bold text-textPrimary font-primary"> Autoria: <span className='font-normal'> { autoria } </span> </p>
                     <div>
-                      {/* <h3>Tecnologias utilizadas</h3> */}
                       {
                         tecnologies && tecnologies.length > 1 && <div className='p-4 mb-4 mt-2 border bg-gradient3 rounded-md'>
-                          <h1 className='font-semibold mb-2 text-textPrimary font-mono text-[1.2rem]'>Tecnologias utilizadas</h1>
+                          <h1 className='font-semibold mb-2 text-textPrimary font-mono text-[.8rem] sm:text-[1.2rem]'>Tecnologias utilizadas</h1>
             
                           <div className={`${tecnologiesStyle} gap-2`}>
                             {  tecnologies?.map( ( { tittle, icon } ) => {
@@ -58,11 +57,11 @@ interface IProjectsModal {
                                   
                                   {
                                     !icon 
-                                    ? <div className='size-[30px] bg-amber-400 rounded-lg'>
+                                    ? <div className=' size-[25px] sm:size-[30px] bg-gray-400 rounded-lg'>
                                     </div>
-                                    : <Image className='size-[30px]' src={`/skills/${icon}`} alt={icon} width={0} height={0}/> 
+                                    : <Image className=' size-[25px] sm:size-[30px]' loading='lazy' src={`/skills/${icon}`} alt={icon} width={30} height={30}/> 
                                   }
-                                  <h2 className='mt-2 uppercase font-mono font-semibold text-textPrimary text-[14px]'>{ tittle }</h2>
+                                  <h2 className='mt-2 uppercase font-mono font-semibold text-textPrimary text-[12px] sm:text-[14px]'>{ tittle }</h2>
                                 </div>
                               )
                             } ) }
