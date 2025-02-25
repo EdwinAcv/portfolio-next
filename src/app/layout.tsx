@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { NabBar } from "@/components/NabBar";
+import { Suspense } from "react";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -35,7 +36,9 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background`}
       >
-        <NabBar/>
+        <Suspense fallback={<div>Loading...</div>}>
+          <NabBar/>
+        </Suspense>
         
           <div className="grid items-center justify-items-center mx-auto ">
               {children}
