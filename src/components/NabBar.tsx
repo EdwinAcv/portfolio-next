@@ -16,7 +16,7 @@ const rutas = [
         path: 'skills',
     },
     {
-        label: 'projectos',
+        label: 'proyectos',
         path: 'projects',
     },
     {

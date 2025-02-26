@@ -78,7 +78,7 @@ export const ContactForm = () => {
         <form onSubmit={handleSubmit}>
             <div className=" rounded-2xl  bg-opacity-65 shadow bg-background  p-6">
                 <div className="mb-4 flex items-center justify-between">
-                    <h2 className="text-xl font-semibold text-textPrimary font-primary text-[20px] ">Dejame un mensaje</h2>
+                    <h2 className="text-xl font-semibold text-textPrimary font-primary text-[20px] ">Déjame un mensaje</h2>
                     
                 </div>
                 {/* <p className="mb-4 text-start text-sm text-textPrimary font-primary">

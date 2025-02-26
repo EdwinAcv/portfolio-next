@@ -48,7 +48,7 @@ interface IProjectsModal {
                     <div>
                       {
                         tecnologies && tecnologies.length > 1 && <div className='p-4 mb-4 mt-2 border bg-gradient3 rounded-md'>
-                          <h1 className='font-semibold mb-2 text-textPrimary font-mono text-[.8rem] sm:text-[1.2rem]'>Tecnologias utilizadas</h1>
+                          <h1 className='font-semibold mb-2 text-textPrimary font-mono text-[.8rem] sm:text-[1.2rem]'>Tecnologías utilizadas</h1>
             
                           <div className={`${tecnologiesStyle} gap-2`}>
                             {  tecnologies?.map( ( { tittle, icon } ) => {
