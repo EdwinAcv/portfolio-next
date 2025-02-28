@@ -12,7 +12,7 @@ const rutas = [
         path: 'aboutme',
     },
     {
-        label: 'tecnologias',
+        label: 'tecnologías',
         path: 'skills',
     },
     {
@@ -20,7 +20,7 @@ const rutas = [
         path: 'projects',
     },
     {
-        label: 'contactame',
+        label: 'contáctame',
         path: 'contact',
     },
 ]

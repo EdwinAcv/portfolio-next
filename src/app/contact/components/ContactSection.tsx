@@ -1,7 +1,7 @@
 import Image from "next/image";
 import contactJson from "@/data/contact.json";
 import { ContactForm } from "@/app/contact/components/ContactForm";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaWhatsapp, FaEnvelope } from "react-icons/fa";
 import Link from "next/link";
 
 export const ContactSection = () => {
@@ -27,20 +27,20 @@ export const ContactSection = () => {
               { description }
             </p>
             {
-              contact.length > 1 && <div>
-                {
-                  contact.map( ( { label, value, icon } ) => {
-                    return (
-                      <div key={label} className="flex flex-col sm:flex-row items-start sm:items-center gap-2 mb-2">
-                        <div className="bg-white p-2 rounded-md">
-                          <Image className="size-[16px] sm:size-[20px]" src={`/contact/${icon}`} alt={label} width={0} height={0}/>
-                        </div>
-                        <h1 className="text-textPrimary text-[14px] sm:text-[16px]">{value}</h1>
-                      </div>
-                    )
-                  } )
-                }
-              </div>
+              // contact.length > 1 && <div>
+              //   {
+              //     contact.map( ( { label, value, icon } ) => {
+              //       return (
+              //         <div key={label} className="flex flex-col sm:flex-row items-start sm:items-center gap-2 mb-2">
+              //           <div className="bg-white p-2 rounded-md">
+              //             <Image className="size-[16px] sm:size-[20px]" src={`/contact/${icon}`} alt={label} width={0} height={0}/>
+              //           </div>
+              //           <h1 className="text-textPrimary text-[14px] sm:text-[16px]">{value}</h1>
+              //         </div>
+              //       )
+              //     } )
+              //   }
+              // </div>
             }
       
             <hr className="my-6 border-gray-300" />
@@ -54,6 +54,16 @@ export const ContactSection = () => {
               </Link>
               <Link href={social[1].value} target="_blank">
                 <FaLinkedin 
+                  className="size-[35px] text-white hover:text-gray-600 hover:cursor-pointer transition-colors duration-300"  
+                />
+              </Link>
+              <Link href={social[1].value} target="_blank">
+                <FaWhatsapp 
+                  className="size-[35px] text-white hover:text-gray-600 hover:cursor-pointer transition-colors duration-300"  
+                />
+              </Link>
+              <Link href={social[1].value} target="_blank">
+                <FaEnvelope 
                   className="size-[35px] text-white hover:text-gray-600 hover:cursor-pointer transition-colors duration-300"  
                 />
               </Link>
