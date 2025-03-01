@@ -47,9 +47,9 @@ export const Carousel = ({images}:IImages) => {
                     )
                   }
                   <Image
-                    width={600}
-                    height={300}
-                    src={`/${src}`}
+                    width={1914}
+                    height={898}
+                    src={`/projects/${src}`}
                     className={`absolute w-full h-full object-contain transition-opacity duration-700 ease-in-out ${ !loading ? "opacity-100" : "opacity-0" }`}
                     alt={`Slide ${index + 1}`}
                     onLoad={handleImageLoad}

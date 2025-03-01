@@ -6,7 +6,7 @@
             "name": "Loto Real",
             "description": "Un rediseño del sitio web de la empresa para mejorar la experiencia del usuario, aumentar la interacción con los clientes y permitir solicitudes de empleo.",
             "images": [
-                "LotoReal.webp"
+                "lotoreal.png"
             ],
             "autoria": "contribución",
             "tecnologies": [
@@ -27,7 +27,7 @@
             "name": "Constructora Real",
             "description": "Una plataforma para mostrar los proyectos de la empresa e incrementar su presencia en línea y la interacción con los clientes.",
             "images": [
-                "ConstructoraReal.webp"
+                "constructora.png"
             ],
             "autoria": "contribución",
             "tecnologies": [
