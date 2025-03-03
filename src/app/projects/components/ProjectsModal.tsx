@@ -43,8 +43,8 @@ interface IProjectsModal {
 
                     <h2 className=" font-bold text-textPrimary font-primary text-[18px] sm:text-[24px] text-wrap"> { name } </h2>
 
-                    <p className="mt-2  text-textPrimary font-primary text-[14px] sm:text-[16px]"> { description } </p>
-                    <p className="mt-4  font-bold text-textPrimary font-primary"> Autoria: <span className='font-normal'> { autoria } </span> </p>
+                    <p className="mt-2 text-textPrimary font-primary text-[14px] sm:text-[16px]"> { description } </p>
+                    <p className="mt-4 font-bold text-textPrimary font-primary"> Autoría: <span className='font-normal'> { autoria } </span> </p>
                     <div>
                       {
                         tecnologies && tecnologies.length > 1 && <div className='p-4 mb-4 mt-2 border bg-gradient3 rounded-md'>

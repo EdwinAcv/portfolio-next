@@ -16,7 +16,7 @@ export const AboutMeSection = () => {
         <div className="mt-[72px]">
           <SplitText
             text={tittle}
-            className="text-[2.7rem] md:text-[2.8rem] lg:text-[3.5rem] xl:text-[4.5rem] leading-[2.8rem] lg:leading-[4rem] text-textPrimary font-mono"
+            className="text-[2.7rem] md:text-[2.8rem] lg:text-[3.5rem] xl:text-[4.5rem] leading-[2.8rem] lg:leading-[4rem] text-textPrimary font-primary"
             delay={50}
             animationFrom={{ opacity: 0, transform: 'translate3d(0,50px,0)' }}
             animationTo={{ opacity: 1, transform: 'translate3d(0,0,0)' }}
@@ -38,7 +38,7 @@ export const AboutMeSection = () => {
             threshold={0.2}
             // delay={1000}
           >
-             <h3 className='text-textSecondary font-mono text-[1.1rem] md:text-[1.2rem] lg:text-[1.25rem] mt-4 pl-4'> { subTittle } </h3>
+             <h3 className='text-textSecondary font-primary text-[1.1rem] md:text-[1.2rem] lg:text-[1.25rem] mt-4 pl-4'> { subTittle } </h3>
             <br/>
 
           {/* description */}
@@ -46,7 +46,7 @@ export const AboutMeSection = () => {
               {
                 description.map( ( paragraph, index ) => (
                   <div key={ paragraph }>
-                    <p className={` ${!(description.length === index + 1) && 'pb-5'} `}> { paragraph } </p>
+                    <p className={`text-[14px] sm:text-[16px] ${!(description.length === index + 1) && 'pb-5'} `}> { paragraph } </p>
                   </div>
                 ) )
               }

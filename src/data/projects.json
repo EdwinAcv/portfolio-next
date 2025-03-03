@@ -46,14 +46,14 @@
         },
         {
             "name": "Monitoreo de expedientes",
-            "description": "Portal para consultar información de un API sobre expedientes que constantemente van cambiando, cada vez que cambien se debe enviar un correo informado que expediente y que información cambio.",
+            "description": "Plataforma que consulta y supervisa en tiempo real la información de un API sobre expedientes en constante actualización. Cada vez que se detecte un cambio en un expediente, el sistema enviará una notificación por correo detallando qué expediente fue modificado y qué información ha cambiado.",
             "images": [
                 "seguimientoExpedientes.png",
                 "seguimiento1.png",
                 "seguimiento2.png",
                 "seguimiento3.png"
             ],
-            "autoria": "total autoría",
+            "autoria": "completa",
             "tecnologies": [
                 { "tittle": "typescript", "icon": "typescript.svg" },
                 { "tittle": "node.js", "icon": "nodejs.svg" },

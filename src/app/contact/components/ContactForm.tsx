@@ -76,41 +76,46 @@ export const ContactForm = () => {
   return (
       <>
         <form onSubmit={handleSubmit}>
-            <div className=" rounded-2xl  bg-opacity-65 shadow bg-background  p-6">
-                <div className="mb-4 flex items-center justify-between">
-                    <h2 className="text-xl font-semibold text-textPrimary font-primary text-[20px] ">Déjame un mensaje</h2>
+            <div className=" rounded-2xl  bg-opacity-65 shadow bg-background p-6">
+                <div className=" mb-4 flex items-center justify-between">
+                    <h2 className="text-xl font-semibold text-textPrimary font-primary text-[14px] sm:text-[17px] ">Déjame un mensaje</h2>
                     
                 </div>
-                {/* <p className="mb-4 text-start text-sm text-textPrimary font-primary">
-                    We'd love to hear what went well or how we can improve the product experience.
-                </p> */}
+                
                 <input
                     name="name"
                     id="name"
-                    className="mb-3 w-full rounded-lg border text-textPrimary bg-gray-500 bg-opacity-20 border-background p-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500" 
+                    className="mb-3 w-full rounded-lg border text-textPrimary bg-gray-500 bg-opacity-20 border-background p-3 text-sm focus:outline-none focus:ring-2 focus:ring-gray-500" 
                     type="text" 
                     value={formData.name}
                     onChange={handleChange}
                     placeholder="Nombre"
+                    maxLength={50}
                 />
+
                 <input
                     id="email"
                     name="email"
-                    className="mb-3 w-full rounded-lg border text-textPrimary bg-gray-500 bg-opacity-20 border-background p-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500" 
+                    className="mb-3 w-full rounded-lg border text-textPrimary bg-gray-500 bg-opacity-20 border-background p-3 text-sm focus:outline-none focus:ring-2 focus:ring-gray-500" 
                     type="email"
                     value={formData.email} 
                     onChange={handleChange}
                     placeholder="Email"
+                    maxLength={50}
                 />
+                <div className="w-full"></div>
+
 
                 <textarea
                     id="message"
                     name="message"
-                    className="mb-3 w-full rounded-lg border text-textPrimary bg-gray-500 bg-opacity-20 border-background p-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500" 
-                    rows={4} 
+                    className="mb-3 w-full rounded-lg border text-textPrimary bg-gray-500 bg-opacity-20 border-background p-3 text-sm focus:outline-none focus:ring-2 focus:ring-gray-500" 
+                    rows={4}
+                    maxLength={500}
                     value={formData.message} 
                     onChange={handleChange}
                     placeholder="Mensaje"
+                    style={{ resize: 'none' }}
                 ></textarea>
 
               
@@ -122,20 +127,6 @@ export const ContactForm = () => {
                 > 
                   Enviar
                 </button>
-                {
-                    // status === 'faltan' &&
-                    // <div className={`bg-green-300 rounded-lg p-3 mt-4 flex items-center gap-2`}>
-                    //     <IoCheckmarkCircle color="#14532d" size={28}/>
-                    //     <p className="font-primary text-green-900"> El correo ha sido enviado </p> 
-                    // </div>
-                    // status === 'faltan' &&
-                    // <div className={`bg-red-300 rounded-lg p-3 mt-4 flex items-center gap-2`}>
-                    //     <IoAlertCircle color="#dc2626" size={28}/>
-                    //     <p className="font-primary text-red-900"> Debe llenar todos los campos </p> 
-                    // </div>
-                }
-
-                {/* <p className="text-textPrimary">{status}</p> */}
             </div>
         </form>
         <ToastContainer 

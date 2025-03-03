@@ -13,3 +13,7 @@
 2025-02-24T13:41:45.674Z - Error: res.status is not a function
 2025-02-24T13:41:47.431Z - Error: res.status is not a function
 2025-02-24T13:47:54.345Z - Error: connect ENETUNREACH 2607:f8b0:4002:c09::6d:465
+2025-03-03T19:19:49.209Z - IP: 10.0.11.12 - Error: Invalid login: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials 00721157ae682-6fd3cb7e14asm21194857b3.81 - gsmtp
+2025-03-03T19:21:11.481Z - IP: 10.0.11.12 - Error: Invalid login: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials 00721157ae682-6fd3cb7e13dsm21125787b3.71 - gsmtp

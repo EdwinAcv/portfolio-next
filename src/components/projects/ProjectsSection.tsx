@@ -6,6 +6,10 @@ import Image from 'next/image';
 import FadeContent from '../FadeContent';
 
 export const ProjectsSection = () => {
+
+  const limitDescription =(desc: string) => {
+    return desc.length > 160 ? `${desc.slice(0, 160)}...` : desc;
+  }
   const { tittle, subtittle, projects } = procjetsJsons;
 
   return (
@@ -32,7 +36,7 @@ export const ProjectsSection = () => {
                 <div className=''>
                   <h3 className='font-primary font-bold text-textPrimary py-2'>{name}</h3>
                   <div className='min-h-[150px] overflow-hidden '>
-                    <p className='font-primary text-textPrimary'>{description}</p>
+                    <p className='font-primary text-textPrimary'>{limitDescription(description)}</p>
                   </div>
                   {/* buttons projects */}
                   <ButtonSection {...project as IProjects} />

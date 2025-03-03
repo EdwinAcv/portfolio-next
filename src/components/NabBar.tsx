@@ -25,6 +25,10 @@ const rutas = [
     },
 ]
 
+const isMobile = () => {
+    return window.matchMedia("(max-width: 768px)").matches;
+}
+
 export const NabBar = () => {
     const searchParams = useSearchParams();
     const param = searchParams.get("section") || "aboutme";
@@ -40,9 +44,6 @@ export const NabBar = () => {
         }, 500);
     }
 
-
-
-    
     useEffect(() => {
         const sections = document.querySelectorAll("section");
         const observer = new IntersectionObserver(
@@ -59,7 +60,7 @@ export const NabBar = () => {
                     setActiveSection(newSection);
                 }
             },
-            { threshold: 0.75 }
+            { threshold: isMobile() ? 0.15 : 0.75, rootMargin: isMobile() ? "0px 0px -50% 0px" : "0px" }
         );
 
         sections.forEach((section) => observer.observe(section));

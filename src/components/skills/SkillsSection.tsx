@@ -43,7 +43,7 @@ export const SkillsSection = ()=> {
                       
                       {
                         !icon 
-                        ? <div className='size-[30px] bg-amber-400 rounded-lg'>
+                        ? <div className='size-[30px] bg-gray-400 rounded-lg'>
                         </div>
                         : <Image loading='lazy' className='size-[35px]' src={`/skills/${icon}`} alt={icon} width={0} height={0}/> 
                       }
