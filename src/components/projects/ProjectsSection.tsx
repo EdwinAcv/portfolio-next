@@ -28,8 +28,14 @@ export const ProjectsSection = () => {
             <FadeContent key={name} blur={true} delay={index * 200} duration={1000} easing="ease-out" initialOpacity={0}>
               <div className='p-4 bg-gray-900 bg-opacity-75 border shadow-white border-[#4B5563] sm:w-[350px] rounded-2xl'>
                 <div>
-                  <div className='w-full h-[200px] bg-poject-preview '>
-                    <Image className=' w-full h-full rounded-lg' src={`/projects/${images[0]}`} width={1800} height={956} alt={images[0]}/>
+                  <div className='relative   rounded-md overflow-hidden'>
+                    <Image 
+                      className=' object-contain ' 
+                      src={`/projects/${images[0]}`} 
+                      width={1800} 
+                      height={956} 
+                      alt={images[0]}
+                    />
                   </div>
                 </div>
 
