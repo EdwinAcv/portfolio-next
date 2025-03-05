@@ -90,8 +90,6 @@ export const NabBar = () => {
                 <Image className='hover:cursor-pointer size-[40px]' src={'/logov2.svg'} alt='logo' width={0} height={0}/>
                 
                 {/* button to open menu items movile */}
-
-                
                 <div className='sm:hidden'> 
                     <MyButton
                         className='text-gray-500 hover:text-white'
